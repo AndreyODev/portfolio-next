@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Régua de profundidade do mar: 11 passos, do raso (0) ao fundo (10).
+ * É o único sistema de neutros do site; não use cinzas fora dela.
+ * A boia (laranja) é reservada à ação principal e ao marcador AGORA.
+ */
+@theme {
+  --color-mar-0: #f2fafc;
+  --color-mar-1: #dcf0f5;
+  --color-mar-2: #b8e2ec;
+  --color-mar-3: #8fd0e1;
+  --color-mar-4: #5fb6cf;
+  --color-mar-5: #3496b6;
+  --color-mar-6: #1a7aa0;
+  --color-mar-7: #0f6189;
+  --color-mar-8: #0b4f78;
+  --color-mar-9: #083a5a;
+  --color-mar-10: #04213a;
+  --color-boia: #ff5a1f;
+  --color-boia-claro: #ff8a5c;
+  --color-boia-tinta: #1c0a03;
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-mar-8);
+  --foreground: var(--color-mar-0);
+  /* Espessura única de traço: curva, filetes e bordas. */
+  --traco: 2px;
+}
+
+/* Larguras da Archivo: títulos expandidos, rótulos de coluna condensados. */
+@utility font-expandida {
+  font-stretch: 125%;
+}
+@utility font-condensada {
+  font-stretch: 75%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  caret-color: var(--color-boia);
+  scrollbar-color: var(--color-mar-4) var(--color-mar-9);
+}
+
+::selection {
+  background: var(--color-boia);
+  color: var(--color-boia-tinta);
+}
+
+:focus-visible {
+  outline: var(--traco) solid var(--color-boia);
+  outline-offset: 3px;
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: var(--traco);
+}
+
+/* Revelação da curva de maré: um único momento, da esquerda para a direita. */
+@media (prefers-reduced-motion: no-preference) {
+  .mare-revela {
+    animation: mare-revela 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes mare-revela {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }

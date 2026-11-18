@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed, Big_Shoulders } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -21,6 +21,18 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   title: { default: `${siteConfig.brand} · ${siteConfig.name}`, template: `%s | ${siteConfig.brand}` },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.name, url: siteConfig.social.github }],
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: siteConfig.brand,
+    title: `${siteConfig.brand} · ${siteConfig.name}`,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7d117",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

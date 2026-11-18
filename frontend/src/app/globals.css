@@ -9,7 +9,6 @@
  */
 @theme {
   --color-arcade: #f7d117;
-  --color-arcade-escuro: #e3bd00;
   --color-tinta: #111111;
   --color-grafite: #2b2b2b;
   --color-papel: #ffffff;
@@ -67,9 +66,7 @@ a {
   filter: drop-shadow(4px 0 0 var(--contorno)) drop-shadow(-4px 0 0 var(--contorno))
     drop-shadow(0 4px 0 var(--contorno)) drop-shadow(0 -4px 0 var(--contorno))
     drop-shadow(3px 0 0 var(--color-tinta)) drop-shadow(-3px 0 0 var(--color-tinta))
-    drop-shadow(0 -3px 0 var(--color-tinta));
-  /* A foto original corta os ombros nas laterais: dissolve só essas bordas retas. */
-  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+    drop-shadow(0 3px 0 var(--color-tinta)) drop-shadow(0 -3px 0 var(--color-tinta));
 }
 
 /* Entrada única: o nome desliza na diagonal e o retrato "trava" com um flash do contorno. */

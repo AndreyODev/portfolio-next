@@ -26,7 +26,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-[90rem] lg:h-[calc(100svh-3rem)] lg:min-h-[46rem] lg:max-h-[62rem]">
         {/* Palco: nome gigante, painel de seleção e retrato */}
-        <div className="relative h-[124vw] max-h-[40rem] overflow-hidden lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-0 lg:h-auto lg:max-h-none">
+        <div className="relative h-[92vw] max-h-[34rem] overflow-hidden lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-0 lg:h-auto lg:max-h-none">
           <div
             aria-hidden="true"
             className="absolute inset-y-0 left-[18%] w-[64%] -skew-x-12 bg-selecao lg:left-[46%] lg:w-[30%]"
@@ -40,9 +40,10 @@ export function Hero() {
           <Image
             src={retrato}
             alt="Andrey Oliveira, de camiseta branca, olhando para a câmera."
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="(min-width: 1024px) 38vw, 90vw"
-            className="retrato-adesivo absolute -bottom-1 left-1/2 h-[87%] w-auto max-w-none -translate-x-1/2 lg:left-[61%] lg:bottom-[6rem] lg:h-[76%]"
+            className="retrato-adesivo absolute bottom-0 left-1/2 h-[90%] w-auto max-w-none -translate-x-1/2 lg:left-[61%] lg:bottom-[6rem] lg:h-[76%]"
           />
         </div>
 
@@ -68,7 +69,7 @@ export function Hero() {
             </svg>
             Chamar no WhatsApp
           </a>
-          <p className="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-semibold">
+          <p className="mt-4 hidden flex-wrap gap-x-5 gap-y-1 font-semibold lg:flex">
             <a href={`mailto:${siteConfig.contact.email}`} className="underline">
               E-mail
             </a>
@@ -81,7 +82,7 @@ export function Hero() {
           </p>
         </div>
 
-        <Roster projects={recentes} className="relative z-10 mt-8 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0" />
+        <Roster projects={recentes} className="relative z-10 mt-6 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0" />
       </div>
     </section>
   );

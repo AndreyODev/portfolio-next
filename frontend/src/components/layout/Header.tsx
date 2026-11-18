@@ -1,28 +1,26 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
-/** Faixa de cabeçalho da tábua: quem, onde e para onde ir. */
+/** Faixa preta de navegação da tela de seleção. */
 export function Header() {
   return (
-    <header className="border-b-2 border-mar-5">
-      <Container className="font-condensada flex h-14 items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.1em] sm:text-sm sm:tracking-[0.14em]">
-        <Link href="/" className="whitespace-nowrap text-mar-0">
+    <header className="bg-tinta text-papel">
+      <div className="font-rotulo mx-auto flex h-12 max-w-[90rem] items-center justify-between gap-3 px-4 text-sm font-bold uppercase tracking-[0.12em] sm:px-6">
+        <Link href="/" className="whitespace-nowrap">
           {siteConfig.name}
-          <span className="hidden text-mar-2 sm:inline"> · {siteConfig.location}</span>
         </Link>
         <nav aria-label="Principal">
-          <ul className="flex gap-3 sm:gap-8">
+          <ul className="flex gap-4 sm:gap-8">
             {siteConfig.nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-mar-1 hover:text-mar-0 hover:underline">
+                <a href={item.href} className="hover:text-arcade hover:underline">
                   {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }

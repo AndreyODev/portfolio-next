@@ -4,7 +4,10 @@
  */
 export const siteConfig = {
   name: "Andrey Oliveira",
-  role: "Desenvolvedor Web",
+  /** Marca escrita gigante na abertura (pedido do Andrey). */
+  brand: "DreyODev",
+  role: "Desenvolvedor full stack",
+  pitch: "Faço sites para negócios da Região dos Lagos, do desenho ao deploy.",
   description: "Andrey Oliveira faz sites para negócios da Região dos Lagos, do desenho ao deploy.",
   locale: "pt-BR",
   nav: [

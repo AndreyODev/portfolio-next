@@ -1,27 +1,25 @@
 @import "tailwindcss";
 
 /*
- * Régua de profundidade do mar: 11 passos, do raso (0) ao fundo (10).
- * É o único sistema de neutros do site; não use cinzas fora dela.
- * A boia (laranja) é reservada à ação principal e ao marcador AGORA.
+ * Seleção de Personagem — uma cor, um significado:
+ *   arcade  = o chão (amarelo da abertura)
+ *   tinta   = texto, traço e faixas
+ *   papel   = o cartão do jogador e o contorno de adesivo
+ *   selecao = só o que está selecionado (painel atrás do Andrey, slot ativo, foco)
  */
 @theme {
-  --color-mar-0: #f2fafc;
-  --color-mar-1: #dcf0f5;
-  --color-mar-2: #b8e2ec;
-  --color-mar-3: #8fd0e1;
-  --color-mar-4: #5fb6cf;
-  --color-mar-5: #3496b6;
-  --color-mar-6: #1a7aa0;
-  --color-mar-7: #0f6189;
-  --color-mar-8: #0b4f78;
-  --color-mar-9: #083a5a;
-  --color-mar-10: #04213a;
-  --color-boia: #ff5a1f;
-  --color-boia-claro: #ff8a5c;
-  --color-boia-tinta: #1c0a03;
+  --color-arcade: #f7d117;
+  --color-arcade-escuro: #e3bd00;
+  --color-tinta: #111111;
+  --color-grafite: #2b2b2b;
+  --color-papel: #ffffff;
+  --color-selecao: #1f4bff;
 
-  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
+  --font-rotulo: var(--font-barlow-condensed), var(--font-barlow), system-ui, sans-serif;
+  --font-display: var(--font-big-shoulders), var(--font-barlow-condensed), sans-serif;
+
+  --border-width-traco: 3px;
 }
 
 @theme inline {
@@ -30,18 +28,8 @@
 }
 
 :root {
-  --background: var(--color-mar-8);
-  --foreground: var(--color-mar-0);
-  /* Espessura única de traço: curva, filetes e bordas. */
-  --traco: 2px;
-}
-
-/* Larguras da Archivo: títulos expandidos, rótulos de coluna condensados. */
-@utility font-expandida {
-  font-stretch: 125%;
-}
-@utility font-condensada {
-  font-stretch: 75%;
+  --background: var(--color-papel);
+  --foreground: var(--color-tinta);
 }
 
 body {
@@ -49,37 +37,60 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
-  caret-color: var(--color-boia);
-  scrollbar-color: var(--color-mar-4) var(--color-mar-9);
+  caret-color: var(--color-selecao);
+  scrollbar-color: var(--color-tinta) var(--color-arcade);
 }
 
 ::selection {
-  background: var(--color-boia);
-  color: var(--color-boia-tinta);
+  background: var(--color-selecao);
+  color: var(--color-papel);
 }
 
 :focus-visible {
-  outline: var(--traco) solid var(--color-boia);
+  outline: 3px solid var(--color-selecao);
   outline-offset: 3px;
 }
 
 a {
   text-underline-offset: 0.2em;
-  text-decoration-thickness: var(--traco);
+  text-decoration-thickness: 2px;
 }
 
-/* Revelação da curva de maré: um único momento, da esquerda para a direita. */
+/* Contorno de adesivo do retrato recortado: branco por dentro, tinta por fora. */
+@property --contorno {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+
+.retrato-adesivo {
+  filter: drop-shadow(4px 0 0 var(--contorno)) drop-shadow(-4px 0 0 var(--contorno))
+    drop-shadow(0 4px 0 var(--contorno)) drop-shadow(0 -4px 0 var(--contorno))
+    drop-shadow(3px 0 0 var(--color-tinta)) drop-shadow(-3px 0 0 var(--color-tinta))
+    drop-shadow(0 -3px 0 var(--color-tinta));
+  /* A foto original corta os ombros nas laterais: dissolve só essas bordas retas. */
+  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+
+/* Entrada única: o nome desliza na diagonal e o retrato "trava" com um flash do contorno. */
 @media (prefers-reduced-motion: no-preference) {
-  .mare-revela {
-    animation: mare-revela 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  .nome-entra {
+    animation: nome-entra 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .retrato-adesivo {
+    animation: retrato-trava 600ms 250ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
 
-@keyframes mare-revela {
+@keyframes nome-entra {
   from {
-    clip-path: inset(0 100% 0 0);
+    translate: -4% 2%;
   }
-  to {
-    clip-path: inset(0 0 0 0);
+}
+
+@keyframes retrato-trava {
+  from {
+    --contorno: var(--color-selecao);
+    translate: 0 3%;
   }
 }

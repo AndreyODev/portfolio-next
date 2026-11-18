@@ -31,11 +31,15 @@ Portfólio pessoal de Andrey Oliveira. Mostrar projetos reais e levar o visitant
 
 - Stack: Next.js 16 (App Router) + React 19 + TypeScript + Tailwind 4 em `frontend/`, independente. Backend futuro em servidor próprio.
 - Conteúdo local em `frontend/src/config` e `frontend/src/data` até existir backend.
-- Undecided: quais projetos entram e em que ordem (o Andrey decide); foto pessoal (nenhuma fornecida ainda).
+- Undecided: quais projetos entram e em que ordem (o Andrey decide).
 
 ## Brand Commitments
 
 - Nome: Andrey Oliveira. GitHub: AndreyODev.
+- **Marca: "DreyODev"**, escrita em tamanho gigante na abertura da home, de borda a borda (pedido do usuário em 2026-11-17, na linha do "ALGODÃO" do site da pousada-algodao). O nome completo "Andrey Oliveira" continua no `h1`/metadados.
+- **O Andrey precisa aparecer**: a abertura mostra a foto dele junto com a marca.
+- Fotos autorizadas (2026-11-17), em `frontend/public/images/andrey/`: `trabalhando.webp` (sem citar o local nem o projeto da tela), `retrato-frontal.webp` e o recorte derivado dele, `retrato-recorte.webp`. A selfie da academia e o retrato em ângulo **não** foram autorizados e ficam fora do projeto.
+- Direção recusada: **Tábua de Marés** (metáfora de maré/curva de entregas, azul do mar). Guardada no branch `design/tabua-de-mares`; não volta.
 - Contatos públicos autorizados pelo usuário em 2026-11-17:
   - WhatsApp: (22) 99756-8439 → `https://wa.me/5522997568439`
   - E-mail: andreyoliveira72005@gmail.com

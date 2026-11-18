@@ -4,7 +4,11 @@
 - Frontend: Next.js **16.4** com `cacheComponents` e `partialPrefetching` ligados no `next.config.ts`. Essa versão muda APIs: leia `frontend/node_modules/next/dist/docs/` antes de usar recursos novos (ver `frontend/AGENTS.md`, que o `next dev` recria sozinho; mantenha commitado).
 - Tipos globais como `LayoutProps<"/">` vêm do `next typegen`; por isso `npm run typecheck` roda `next typegen && tsc --noEmit`.
 - Conteúdo fica em `src/config/site.ts` e `src/data/`; a única ponte com o backend é `src/services/api.ts` via `NEXT_PUBLIC_API_URL` (inlined no build).
-- Visual atual é provisório (fontes Geist e cores do template). O design ainda vai ser definido.
+- Design: direção **Seleção de Personagem**, hero aprovado em 2026-11-18. Sistema em `DESIGN.md` (+ `.impeccable/design.json`); decisões e o que não fazer em `pesquisa/design/LINGUAGEM.md`; contrato da home em `.impeccable/surfaces/frontend-src-app-page-tsx.md`. Leia antes de mexer no visual. A direção Tábua de Marés foi recusada e está só no branch `design/tabua-de-mares`.
+- Capturas de página inteira para revisão: o `--screenshot` do Chromium distorce o hero (usa `svh`); use CDP com `captureBeyondViewport` mantendo a viewport real (1440x900 e 390x844).
+- Os `.webp.json` ao lado das fotos em `public/images/andrey/` são o registro de origem (procedência) das imagens; mantenha ao trocar uma foto.
+- O build avisa `Failed to find font override values for font Big Shoulders`: é só a falta de métricas para a fonte reserva; a fonte carrega normal.
+- `retrato-recorte.webp` foi gerado do `retrato-frontal.webp` com rembg (`u2net_human_seg`) num venv temporário fora do projeto. O modelo `birefnet-portrait` estoura a memória desta máquina.
 - Validação: `cd frontend && npm run check` (lint + typecheck + build).
 - Porta do front: **3010** (a 3000 é usada pelo backend da pousada-algodao). Backend futuro: 3333.
 - Neste PC, `npm run dev` pode falhar com "Too many open files (os error 24)" do Turbopack: é o limite `fs.inotify.max_user_instances=128` estourado por outros programas (Cursor, Claude etc.), não erro do código. Contorno sem sudo: `npm run build && npm run start` (launch.json `frontend-prod`). Solução definitiva (com sudo, decisão do usuário): `fs.inotify.max_user_instances=1024` em `/etc/sysctl.d/`.

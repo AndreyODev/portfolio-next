@@ -1,22 +1,46 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Barlow, Barlow_Condensed, Big_Shoulders } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-// Fontes provisórias do template; serão revistas na etapa de design.
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Fontes baixadas no build e servidas pelo próprio site (sem CDN em tempo de execução).
+const bigShoulders = Big_Shoulders({
+  variable: "--font-big-shoulders",
+  subsets: ["latin"],
+  adjustFontFallback: false,
+});
+const barlow = Barlow({ variable: "--font-barlow", subsets: ["latin"], weight: ["400", "600", "700"] });
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow-condensed",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 export const metadata: Metadata = {
-  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
+  title: { default: `${siteConfig.brand} · ${siteConfig.name}`, template: `%s | ${siteConfig.brand}` },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.name, url: siteConfig.social.github }],
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: siteConfig.brand,
+    title: `${siteConfig.brand} · ${siteConfig.name}`,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7d117",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="pt-BR"
+      className={`${bigShoulders.variable} ${barlow.variable} ${barlowCondensed.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">
         <Header />
         <main className="flex-1">{children}</main>

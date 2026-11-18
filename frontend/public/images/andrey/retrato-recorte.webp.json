@@ -1,0 +1,4 @@
+{
+  "prompt": "ORIGIN: derivada de retrato-frontal.webp (foto do Andrey, 2026-11-17). Fundo removido com rembg (modelo u2net_human_seg) e silhueta de busto fechada (retângulo + meia elipse) com 16px de margem transparente, redimensionada para 900px de largura. Nenhum pixel gerado por IA.",
+  "createdAt": "2026-11-18T16:22:33.740Z"
+}

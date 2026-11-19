@@ -1,26 +1,36 @@
 import Link from "next/link";
+import { MenuCelular } from "@/components/layout/MenuCelular";
 import { siteConfig } from "@/config/site";
+import { home } from "@/data/home";
 
-/** Faixa preta de navegação da tela de seleção. */
+/**
+ * Cabeçalho transparente sobre a abertura: assinatura, navegação e o WhatsApp em pílula.
+ * No celular, a navegação vira um menu em tela cheia (MenuCelular).
+ */
 export function Header() {
   return (
-    <header className="bg-tinta text-papel">
-      <div className="font-rotulo mx-auto flex h-12 max-w-[90rem] items-center justify-between gap-3 px-4 text-sm font-bold uppercase tracking-[0.12em] sm:px-6">
-        <Link href="/" className="whitespace-nowrap">
-          {siteConfig.name}
-        </Link>
-        <nav aria-label="Principal">
-          <ul className="flex gap-4 sm:gap-8">
-            {siteConfig.nav.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} className="hover:text-arcade hover:underline">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+    <header className="cabecalho">
+      <Link href="/" prefetch={false} className="cabecalho-marca">
+        <small>{siteConfig.tagline}</small>
+        <b>{siteConfig.name}</b>
+      </Link>
+
+      <nav aria-label="Principal" className="cabecalho-nav">
+        <ul>
+          {siteConfig.nav.map((item) => (
+            <li key={item.href}>
+              <a href={`/${item.href}`}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener" className="cabecalho-pilula">
+        {home.acoes.whatsappCurto}
+        <i aria-hidden="true" />
+      </a>
+
+      <MenuCelular />
     </header>
   );
 }

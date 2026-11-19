@@ -1,61 +1,43 @@
+import { Rotulo } from "@/components/ui/Rotulo";
 import { siteConfig } from "@/config/site";
+import { home } from "@/data/home";
+import s from "./Contact.module.css";
 
-const CANAIS = [
-  { rotulo: "E-mail", valor: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}`, externo: false },
-  { rotulo: "LinkedIn", valor: "andrey-oliveira-dev", href: siteConfig.social.linkedin, externo: true },
-  { rotulo: "GitHub", valor: "AndreyODev", href: siteConfig.social.github, externo: true },
-];
+const t = home.contato;
 
-/** Chamada final: a tela de "continuar?" do jogo, com o WhatsApp como opção principal. */
+/**
+ * Contato: a única faixa inteira em laranja (o contrapeso ao preto), com a borda superior curva.
+ * O WhatsApp é a ação principal; e-mail, LinkedIn e GitHub ficam à direita.
+ */
 export function Contact() {
   return (
-    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-12 bg-arcade">
-      <div className="mx-auto grid max-w-[90rem] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-10 lg:gap-x-8 lg:py-24">
-        <div className="lg:col-span-6">
-          <h2
-            id="contato-titulo"
-            className="font-display text-[clamp(3.25rem,10vw,6rem)] font-black uppercase leading-[0.9] text-balance"
-          >
-            <span className="inline-block origin-bottom-left -skew-x-[8deg]">
-              Próxima fase: <span className="whitespace-nowrap">o seu site.</span>
-            </span>
+    <section id="contato" aria-labelledby="contato-titulo" className={s.contato}>
+      <div className={s.quadro}>
+        <span className={`arco ${s.arco} ${s.arcoA}`} aria-hidden="true" />
+        <span className={`arco ${s.arco} ${s.arcoB}`} aria-hidden="true" />
+
+        <header className={s.cab}>
+          <Rotulo className={s.rotulo}>{t.rotulo}</Rotulo>
+          <h2 id="contato-titulo" className={s.titulo}>
+            {t.titulo} <span className={s.caligrafia}>{t.caligrafia}</span>
           </h2>
-          <p className="mt-6 max-w-[44ch] text-lg sm:text-xl">
-            Me conte o que o seu negócio precisa. A conversa começa no WhatsApp.
-          </p>
-        </div>
+        </header>
 
-        <div className="lg:col-span-4 lg:self-end">
-          <a
-            href={siteConfig.contact.whatsapp}
-            target="_blank"
-            rel="noopener"
-            className="group flex items-center justify-between gap-4 border-traco border-tinta bg-tinta px-6 py-5 text-arcade outline-offset-3 transition-[outline] hover:outline-3 hover:outline-tinta"
-          >
-            <span>
-              <span className="font-rotulo block text-2xl font-bold uppercase tracking-[0.08em]">
-                Chamar no WhatsApp
-              </span>
-              <span className="mt-1 block text-papel">{siteConfig.contact.whatsappLabel}</span>
-            </span>
-            <svg aria-hidden="true" viewBox="0 0 12 14" className="h-5 w-4 shrink-0 fill-current">
-              <path d="M0 0 L12 7 L0 14 Z" />
-            </svg>
-          </a>
+        <div className={s.base}>
+          <div className={s.acao}>
+            <p className={s.chamada}>{t.chamada}</p>
+            <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener" className={s.botao}>
+              {home.acoes.whatsapp}
+              <small>{siteConfig.contact.whatsappLabel}</small>
+            </a>
+          </div>
 
-          <dl className="mt-6 border-t-traco border-tinta">
-            {CANAIS.map((canal) => (
-              <div
-                key={canal.rotulo}
-                className="grid grid-cols-[6.5rem_1fr] items-baseline gap-4 border-b-traco border-tinta py-3"
-              >
-                <dt className="font-rotulo font-bold uppercase tracking-[0.14em]">{canal.rotulo}</dt>
-                <dd className="min-w-0 break-words">
-                  <a
-                    href={canal.href}
-                    {...(canal.externo ? { target: "_blank", rel: "noopener" } : {})}
-                    className="font-semibold underline hover:text-grafite"
-                  >
+          <dl className={s.canais}>
+            {t.canais.map((canal) => (
+              <div key={canal.rotulo}>
+                <dt>{canal.rotulo}</dt>
+                <dd>
+                  <a href={canal.href} {...(canal.externo ? { target: "_blank", rel: "noopener" } : {})}>
                     {canal.valor}
                   </a>
                 </dd>

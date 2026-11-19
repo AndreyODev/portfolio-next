@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&family=Allura&display=block" rel="stylesheet">
+<style>
+/* Hero C no celular (390x844): mesmo gesto, empilhado. Nome sangrando nas bordas,
+   foto logo abaixo com a cabeça cobrindo a base das letras, apoio e WhatsApp embaixo. */
+:root { --bordo: #0c0c0c; --creme: #f4f4f1; --cobre: #ff7a1a; --cobre-tinta: #170900; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 390px; height: 844px; }
+body{height:844px}
+body { position: relative; overflow: hidden; background: var(--bordo); color: var(--creme); font-family: "Jost", sans-serif; }
+
+.nav { position: absolute; z-index: 7; top: 0; left: 20px; right: 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.marca small { display: block; font: italic 400 11px/1 "Gilda Display"; color: var(--cobre); margin-bottom: 3px; }
+.marca b { font: 400 19px/1 "Gilda Display"; font-weight: 400; }
+.menu { display: grid; gap: 6px; } .menu i { display: block; width: 26px; height: 1.5px; background: var(--creme); }
+
+.hero-foto, .hero-pessoa { position: absolute; top: 70px; left: 0; width: 390px; height: 520px; object-fit: cover; object-position: 30% 0%; }
+.hero-foto { z-index: 1; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 150px, #000 75%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 150px, #000 75%, transparent 100%); }
+.hero-pessoa { z-index: 5; -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent 100%); mask-image: linear-gradient(to bottom, #000 75%, transparent 100%); }
+.hero-orbita { position: absolute; z-index: 3; left: -260px; top: 70px; width: 820px; height: 820px; border: 1px solid rgba(255,122,26,.45); border-radius: 50%; clip-path: inset(0 0 70% 0); }
+
+.hero-rotulo { position: absolute; z-index: 6; left: 0; right: 0; top: 128px; display: flex; justify-content: center; align-items: center; gap: 12px; font: 400 11px/1 "Jost"; letter-spacing: .5em; color: var(--cobre); text-transform: uppercase; }
+.hero-rotulo i { display: block; width: 28px; height: 1px; background: var(--cobre); }
+.hero-nome { position: absolute; z-index: 4; left: 50%; top: 160px; transform: translateX(-50%); white-space: nowrap; font: 400 74px/.8 "Gilda Display", serif; letter-spacing: -.012em; }
+.hero-script { position: absolute; z-index: 4; left: 22px; top: 206px; font: 400 56px/1 "Allura", cursive; color: var(--cobre); transform: rotate(-4deg); }
+
+.hero-apoio { position: absolute; z-index: 6; left: 24px; right: 24px; top: 610px; font: 400 14px/1.6 "Jost"; letter-spacing: .22em; text-transform: uppercase; }
+.hero-apoio em { font-style: normal; color: var(--cobre); }
+.btn-whats { position: absolute; z-index: 6; left: 24px; right: 24px; top: 730px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--cobre); color: var(--cobre-tinta); border-radius: 999px; font: 500 14px/1 "Jost"; letter-spacing: .24em; text-transform: uppercase; }
+</style></head>
+<body>
+  <nav class="nav"><div class="marca"><small>dev full stack</small><b>Andrey Oliveira</b></div><div class="menu"><i></i><i></i><i></i></div></nav>
+  <img class="hero-foto" src="img/trab-cor.jpg" alt="">
+  <span class="hero-orbita"></span>
+  <div class="hero-rotulo"><i></i>Andrey Oliveira<i></i></div>
+  <div class="hero-nome">DREYODEV</div>
+  <img class="hero-pessoa" src="img/trab-cor-pessoa.png" alt="">
+  <p class="hero-apoio">Faço sites para negócios da <em>Região dos Lagos</em>, do desenho ao deploy.</p>
+  <span class="btn-whats">Chamar no WhatsApp</span>
+</body></html>

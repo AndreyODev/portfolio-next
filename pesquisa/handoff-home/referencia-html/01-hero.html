@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&family=Allura&display=block" rel="stylesheet">
+<style>
+/* Hero C — o gesto da abertura da pousada (nome monumental sangrando nas bordas, rótulo espaçado,
+   caligrafia por cima, apoio em caixa alta espaçada) com a foto de trabalho do Andrey.
+   Paleta própria: bordô da noite, creme e cobre. Maquete 1920x1080, posicionamento absoluto. */
+:root { --bordo: #0c0c0c; --bordo-2: #161616; --creme: #f4f4f1; --cobre: #ff7a1a; --cobre-tinta: #170900; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; }
+body { position: relative; overflow: hidden; background: var(--bordo); color: var(--creme); font-family: "Jost", sans-serif; }
+
+.hero-foto, .hero-pessoa { position: absolute; top: 150px; left: 700px; width: 1220px; height: 930px; object-fit: cover; object-position: 50% 0%; }
+.hero-foto { z-index: 1; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 240px), linear-gradient(to bottom, transparent 0, #000 200px); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0, #000 240px), linear-gradient(to bottom, transparent 0, #000 200px); mask-composite: intersect; }
+/* Forma curva translúcida à esquerda (a "crista"), como na pousada. */
+.hero-crista { position: absolute; z-index: 2; left: -760px; top: -330px; width: 1780px; height: 1780px; border-radius: 50%; background: radial-gradient(closest-side, rgba(12,12,12,.95) 70%, rgba(12,12,12,.86) 100%); }
+.hero-veu { position: absolute; z-index: 2; inset: 0; background: linear-gradient(to bottom, rgba(12,12,12,.45), transparent 22%, transparent 70%, rgba(12,12,12,.55)); }
+.hero-orbita { position: absolute; z-index: 3; border: 1.5px solid rgba(255,122,26,.45); border-radius: 50%; }
+.hero-orbita.a { left: 330px; top: -620px; width: 2100px; height: 2100px; clip-path: inset(0 0 52% 0); }
+.hero-orbita.b { left: -900px; top: 120px; width: 2300px; height: 2300px; clip-path: inset(0 30% 60% 30%); }
+
+/* Rótulo espaçado com fios acima do nome. */
+.hero-rotulo { position: absolute; z-index: 6; left: 436px; top: 286px; display: flex; align-items: center; gap: 22px; font: 400 17px/1 "Jost"; letter-spacing: .62em; color: var(--cobre); text-transform: uppercase; }
+.hero-rotulo i { display: block; height: 1px; background: var(--cobre); opacity: .8; }
+.hero-rotulo i:first-child { width: 52px; } .hero-rotulo i:last-child { width: 88px; }
+
+/* Nome monumental, sangrando nas duas bordas; passa por trás do Andrey (camada .hero-pessoa acima). */
+.hero-nome { position: absolute; z-index: 4; left: 50%; top: 312px; transform: translateX(-50%); white-space: nowrap; font: 400 372px/.8 "Gilda Display", serif; letter-spacing: -.012em; color: var(--creme); }
+.hero-pessoa { z-index: 5; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 150px); mask-image: linear-gradient(to right, transparent 0, #000 150px); }
+/* Caligrafia por cima do nome. */
+.hero-script { position: absolute; z-index: 6; left: 120px; top: 498px; font: 400 196px/1 "Allura", cursive; color: var(--cobre); transform: rotate(-4deg); }
+
+.hero-apoio { position: absolute; z-index: 6; left: 160px; top: 770px; width: 600px; font: 400 21px/1.62 "Jost"; letter-spacing: .3em; text-transform: uppercase; }
+.hero-apoio em { font-style: normal; color: var(--cobre); }
+.hero-acoes { position: absolute; z-index: 6; left: 160px; top: 920px; display: flex; align-items: center; gap: 40px; }
+.btn-whats { display: inline-flex; align-items: center; gap: 14px; height: 62px; padding: 0 34px; background: var(--cobre); color: var(--cobre-tinta); border-radius: 999px; font: 500 17px/1 "Jost"; letter-spacing: .26em; text-transform: uppercase; }
+.descer { display: flex; align-items: center; gap: 18px; font: 400 15px/1.5 "Jost"; letter-spacing: .3em; text-transform: uppercase; }
+.descer span.c { display: grid; place-items: center; width: 52px; height: 52px; border: 1.5px solid rgba(244,244,241,.7); border-radius: 50%; }
+
+/* Cabeçalho transparente: assinatura, navegação e o WhatsApp em pílula (o "Reservar" da pousada). */
+.nav { position: absolute; z-index: 7; top: 0; left: 360px; right: 356px; height: 84px; display: flex; align-items: center; justify-content: space-between; }
+.marca { line-height: 1; }
+.marca small { display: block; font: italic 400 15px/1 "Gilda Display"; color: var(--cobre); margin-bottom: 4px; }
+.marca b { font: 400 24px/1 "Gilda Display"; font-weight: 400; }
+.nav ul { display: flex; gap: 38px; list-style: none; font: 400 16px/1 "Jost"; }
+.pilula { height: 44px; padding: 0 26px; display: flex; align-items: center; gap: 14px; border: 1px solid rgba(255,122,26,.7); border-radius: 999px; font: 400 14px/1 "Jost"; letter-spacing: .34em; color: var(--cobre); text-transform: uppercase; }
+.pilula i { width: 6px; height: 6px; border-radius: 50%; background: var(--cobre); }
+
+/* Borda inferior curva, abrindo a faixa seguinte. */
+.hero-borda { position: absolute; z-index: 6; left: -200px; right: -200px; bottom: -1700px; height: 1780px; border-radius: 50%; background: var(--bordo); }
+</style></head>
+<body>
+  <img class="hero-foto" src="img/trab-cor.jpg" alt="">
+  <div class="hero-crista"></div>
+  <div class="hero-veu"></div>
+  <span class="hero-orbita a"></span><span class="hero-orbita b"></span>
+
+  <nav class="nav">
+    <div class="marca"><small>dev full stack</small><b>Andrey Oliveira</b></div>
+    <ul><li>Entregas</li><li>Sobre</li><li>Contato</li></ul>
+    <div class="pilula">WhatsApp <i></i></div>
+  </nav>
+
+  <div class="hero-rotulo"><i></i>Andrey Oliveira<i></i></div>
+  <div class="hero-nome">DREYODEV</div>
+  <img class="hero-pessoa" src="img/trab-cor-pessoa.png" alt="">
+  <div class="hero-script">full stack</div>
+
+  <p class="hero-apoio">Faço sites para negócios da <em>Região dos Lagos</em>, do desenho ao deploy.</p>
+  <div class="hero-acoes">
+    <span class="btn-whats">Chamar no WhatsApp</span>
+    <span class="descer"><span class="c"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" stroke="#f4f4f1" stroke-width="1.6"><path d="M7 1v15M1 10l6 6 6-6"/></svg></span>Ver as<br>entregas</span>
+  </div>
+  <div class="hero-borda"></div>
+</body></html>

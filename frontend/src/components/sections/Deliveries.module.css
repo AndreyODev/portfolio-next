@@ -1,0 +1,367 @@
+/*
+ * Entregas. Referência: pesquisa/handoff-home/referencia-html/02-entregas.html (1920x2240).
+ * Celular primeiro (empilhado); a partir de 1024px, medidas do quadro de 1920 em --f.
+ */
+
+.entregas {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-preto);
+  scroll-margin-top: 0;
+}
+
+.quadro {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 104px var(--gutter) 88px;
+}
+
+.arco {
+  display: none;
+}
+
+.cab {
+  position: relative;
+}
+
+.rotulo {
+  --rotulo-tam: 13px;
+}
+
+.titulo {
+  position: relative;
+  margin-top: 22px;
+  font: 400 22cqw / 0.86 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.caligrafia {
+  position: absolute;
+  left: 48cqw;
+  top: 12cqw;
+  font: 400 15cqw / 1 var(--font-allura), cursive;
+  letter-spacing: normal;
+  white-space: nowrap;
+  color: var(--color-laranja);
+  rotate: -4deg;
+}
+
+.intro {
+  max-width: 34ch;
+  margin-top: 56px;
+  font: 300 18px / 1.6 var(--font-sans);
+  color: var(--color-apoio);
+}
+
+.lista {
+  display: grid;
+  gap: 72px;
+  margin-top: 64px;
+  list-style: none;
+}
+
+/* ── Linha editorial (projeto com tela) ─────────────────────────────────────── */
+.linha {
+  display: grid;
+  gap: 28px;
+}
+
+.tela {
+  position: relative;
+  display: block;
+  aspect-ratio: 960 / 600;
+  overflow: hidden;
+  background: var(--color-preto-2);
+}
+
+.tela img {
+  object-fit: cover;
+  object-position: top;
+  transition: scale 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tela::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-fio);
+  transition: border-color 400ms cubic-bezier(0.16, 1, 0.3, 1), border-width 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.linha:hover .tela::after,
+.linha:focus-within .tela::after {
+  border: 2px solid var(--color-laranja);
+}
+
+.linha:hover .tela img,
+.linha:focus-within .tela img {
+  scale: 1.03;
+}
+
+.meta {
+  font: 400 12px / 1.4 var(--font-sans);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-apoio);
+}
+
+.nome {
+  margin-top: 16px;
+  font: 400 13cqw / 0.9 var(--font-display);
+}
+
+.resumo {
+  margin-top: 18px;
+  font: 300 18px / 1.6 var(--font-sans);
+  color: var(--color-apoio);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font: 500 12px / 1 var(--font-sans);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.status i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-laranja);
+}
+
+.obra {
+  color: var(--color-apoio);
+}
+
+.obra i {
+  background: transparent;
+  border: 1.5px solid var(--color-apoio);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  margin-top: 28px;
+  --link-tam: 13px;
+}
+
+/* ── Faixa tipográfica (projeto sem tela) ────────────────────────────────────── */
+.faixa {
+  display: grid;
+  gap: 16px;
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--color-fio);
+  border-bottom: 1px solid var(--color-fio);
+}
+
+.faixa + .faixa {
+  margin-top: -73px;
+}
+
+.nomeVazado {
+  font: 400 22cqw / 1 var(--font-display);
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(244 244 241 / 0.55);
+}
+
+.faixaInfo .resumo {
+  margin-top: 12px;
+}
+
+.lado .status {
+  margin-top: 4px;
+}
+
+.lado .links {
+  margin-top: 20px;
+}
+
+/* ── Entrada: cada linha sobe 24px ao entrar na tela (sem suporte, tudo já aparece pronto) ── */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .linha,
+    .faixa {
+      animation: entra linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes entra {
+  from {
+    translate: 0 24px;
+    opacity: 0;
+  }
+}
+
+/* ── Desktop: quadro de 1920 ────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .quadro {
+    padding: calc(150 * var(--f)) var(--gutter) calc(100 * var(--f));
+  }
+
+  .arco {
+    display: block;
+    left: calc(1100 * var(--f));
+    top: calc(-900 * var(--f));
+    width: calc(1600 * var(--f));
+    height: calc(1600 * var(--f));
+    clip-path: inset(55% 0 0 0);
+  }
+
+  .cab {
+    height: calc(470 * var(--f));
+  }
+
+  .rotulo {
+    --rotulo-tam: max(12px, calc(17 * var(--f)));
+  }
+
+  .titulo {
+    position: static;
+    margin-top: calc(34 * var(--f));
+    font-size: calc(230 * var(--f));
+  }
+
+  .caligrafia {
+    left: calc(470 * var(--f));
+    top: calc(170 * var(--f));
+    font-size: calc(150 * var(--f));
+  }
+
+  .intro {
+    position: absolute;
+    left: calc(1060 * var(--f));
+    top: calc(180 * var(--f));
+    width: calc(540 * var(--f));
+    max-width: none;
+    margin-top: 0;
+    font-size: max(17px, calc(24 * var(--f)));
+  }
+
+  .lista {
+    display: block;
+    margin-top: 0;
+  }
+
+  .lista > li + li {
+    margin-top: calc(80 * var(--f));
+  }
+
+  .lista > .linha + .faixa {
+    margin-top: calc(60 * var(--f));
+  }
+
+  .linha {
+    grid-template-columns: calc(960 * var(--f)) calc(100 * var(--f)) calc(560 * var(--f));
+    gap: 0;
+    min-height: calc(600 * var(--f));
+  }
+
+  .linha .tela {
+    grid-column: 1;
+    grid-row: 1;
+    width: calc(960 * var(--f));
+    height: calc(600 * var(--f));
+    aspect-ratio: auto;
+  }
+
+  .linha .info {
+    grid-column: 3;
+    grid-row: 1;
+    padding-top: calc(70 * var(--f));
+  }
+
+  .dir {
+    grid-template-columns: calc(560 * var(--f)) 1fr calc(960 * var(--f));
+  }
+
+  .dir .tela {
+    grid-column: 3;
+  }
+
+  .dir .info {
+    grid-column: 1;
+  }
+
+  .meta {
+    font-size: max(12px, calc(15 * var(--f)));
+    line-height: 1;
+  }
+
+  .nome {
+    margin-top: calc(26 * var(--f));
+    font-size: calc(104 * var(--f));
+  }
+
+  .resumo {
+    margin-top: calc(28 * var(--f));
+    font-size: max(17px, calc(24 * var(--f)));
+  }
+
+  .status {
+    margin-top: calc(30 * var(--f));
+    font-size: max(12px, calc(15 * var(--f)));
+  }
+
+  .links {
+    gap: calc(40 * var(--f));
+    /* 47 = 44 da referência + a folga da linha do status (inline-flex) na maquete. */
+    margin-top: calc(47 * var(--f));
+    --link-tam: max(12px, calc(15 * var(--f)));
+  }
+
+  .faixa {
+    /* Coluna do nome com os 900px da referência; nome longo quebra dentro dela e o texto fica alinhado entre faixas. */
+    grid-template-columns: calc(900 * var(--f)) 1fr auto;
+    gap: 0;
+    align-items: start;
+    min-height: calc(180 * var(--f));
+    padding: calc(52 * var(--f)) 0 calc(28 * var(--f));
+  }
+
+  .faixa + .faixa {
+    margin-top: -1px;
+  }
+
+  /*
+   * Na referência o nome é absoluto: só 92px da linha de 150px contam na altura da faixa e o "p"
+   * atravessa o fio de baixo. Com nome em duas linhas, a faixa cresce.
+   */
+  .nomeVazado {
+    min-width: 0;
+    margin: calc(-6 * var(--f)) 0 calc(-58 * var(--f));
+    overflow-wrap: anywhere;
+    padding-right: calc(48 * var(--f));
+    font-size: calc(150 * var(--f));
+  }
+
+  .faixaInfo .resumo {
+    margin-top: calc(14 * var(--f));
+    font-size: max(16px, calc(21 * var(--f)));
+  }
+
+  .lado {
+    padding-top: calc(14 * var(--f));
+    padding-left: calc(48 * var(--f));
+    text-align: right;
+  }
+
+  .lado .status {
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .lado .links {
+    justify-content: flex-end;
+    margin-top: calc(26 * var(--f));
+  }
+}

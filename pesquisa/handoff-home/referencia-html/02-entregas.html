@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&family=Allura&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+/* 02 — Entregas: cabeçalho monumental + projetos em linhas editoriais alternadas.
+   Telas reais em cor; a primeira linha mostra o estado de hover (moldura laranja de 2px). */
+body{height:2240px}
+.cab { position: absolute; left: 160px; top: 150px; }
+.cab .titulo { --t: 230px; margin-top: 34px; }
+.cab .script { --s: 150px; position: absolute; left: 470px; top: 170px; white-space: nowrap; }
+.cab-texto { position: absolute; left: 1220px; top: 330px; width: 540px; }
+.arco.a { left: 1100px; top: -900px; width: 1600px; height: 1600px; clip-path: inset(55% 0 0 0); }
+
+.proj { position: absolute; left: 160px; right: 160px; height: 600px; }
+.proj .tela { position: absolute; top: 0; width: 960px; height: 600px; overflow: hidden; border-radius: 0 0 0 0; }
+.proj .tela img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.proj .tela::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--fio); }
+.proj.hover .tela::after { border: 2px solid var(--laranja); }
+.proj .info { position: absolute; top: 70px; width: 560px; }
+.proj.esq .tela { left: 0; } .proj.esq .info { left: 1060px; }
+.proj.dir .tela { right: 0; } .proj.dir .info { left: 0; }
+.meta { font: 400 15px/1 "Jost"; letter-spacing: .32em; text-transform: uppercase; color: var(--apoio); }
+.nome-proj { margin-top: 26px; font: 400 104px/.9 "Gilda Display", serif; }
+.resumo { margin-top: 28px; }
+.status { margin-top: 30px; display: inline-flex; align-items: center; gap: 12px; font: 500 15px/1 "Jost"; letter-spacing: .3em; text-transform: uppercase; }
+.status i { width: 9px; height: 9px; border-radius: 50%; background: var(--laranja); }
+.status.obra { color: var(--apoio); } .status.obra i { background: transparent; border: 1.5px solid var(--apoio); }
+.links { margin-top: 44px; display: flex; gap: 40px; }
+
+.obra-faixa { position: absolute; left: 160px; right: 160px; top: 1830px; height: 220px; border-top: 1px solid var(--fio); border-bottom: 1px solid var(--fio); }
+.obra-faixa .nome-grande { position: absolute; left: 0; top: 46px; font: 400 150px/1 "Gilda Display", serif; color: transparent; -webkit-text-stroke: 1.5px rgba(244,244,241,.55); }
+.obra-faixa .info { position: absolute; left: 900px; top: 52px; width: 700px; }
+.obra-faixa .meta { display: block; }
+.obra-faixa .resumo { margin-top: 14px; font-size: 21px; }
+.obra-faixa .lado { position: absolute; right: 0; top: 66px; text-align: right; }
+.obra-faixa .lado .status { margin-top: 0; }
+.obra-faixa .lado .links { margin-top: 26px; justify-content: flex-end; }
+.nota { position: absolute; right: 160px; top: 2080px; font: 300 14px/1 "Jost"; letter-spacing: .14em; color: rgba(244,244,241,.4); text-transform: uppercase; }
+</style></head>
+<body>
+  <span class="arco a"></span>
+  <div class="cab">
+    <span class="rotulo"><i></i>Entregas<i></i></span>
+    <div class="titulo">Sites</div>
+    <span class="script">no ar</span>
+  </div>
+  <p class="texto cab-texto">Cada projeto tem o site publicado ou o código aberto no GitHub.</p>
+
+  <article class="proj esq hover" style="top:620px">
+    <div class="tela"><img src="img/tela-estrela.jpg" alt=""></div>
+    <div class="info">
+      <p class="meta">Landing page · nov 2026</p>
+      <h3 class="nome-proj">Estrela Grill</h3>
+      <p class="texto resumo">Site da churrascaria Estrela Grill.</p>
+      <span class="status"><i></i>No ar</span>
+      <div class="links">
+        <span class="link-seta">Abrir o site <svg viewBox="0 0 14 14" fill="none" stroke="#f4f4f1" stroke-width="1.5"><path d="M3 11L11 3M5 3h6v6"/></svg></span>
+        <span class="link-seta">Ver o código <svg viewBox="0 0 14 14" fill="none" stroke="#f4f4f1" stroke-width="1.5"><path d="M3 11L11 3M5 3h6v6"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj dir" style="top:1300px">
+    <div class="tela"><img src="img/tela-sushi.jpg" alt=""></div>
+    <div class="info">
+      <p class="meta">Landing page · nov 2026</p>
+      <h3 class="nome-proj">Sushi Vaz</h3>
+      <p class="texto resumo">Site do restaurante Sushi Vaz.</p>
+      <span class="status"><i></i>No ar</span>
+      <div class="links">
+        <span class="link-seta">Abrir o site <svg viewBox="0 0 14 14" fill="none" stroke="#f4f4f1" stroke-width="1.5"><path d="M3 11L11 3M5 3h6v6"/></svg></span>
+        <span class="link-seta">Ver o código <svg viewBox="0 0 14 14" fill="none" stroke="#f4f4f1" stroke-width="1.5"><path d="M3 11L11 3M5 3h6v6"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="obra-faixa" style="top:1960px; height: 180px">
+    <div class="nome-grande">DropaAI</div>
+    <div class="info">
+      <span class="meta">Plataforma web · nov 2026</span>
+      <p class="texto resumo">Plataforma para a comunidade de Free Fire: recrutamento, equipes e conexão entre jogadores.</p>
+    </div>
+    <div class="lado">
+      <span class="status obra"><i></i>Em construção</span>
+      <div class="links"><span class="link-seta">Ver o código <svg viewBox="0 0 14 14" fill="none" stroke="#f4f4f1" stroke-width="1.5"><path d="M3 11L11 3M5 3h6v6"/></svg></span></div>
+    </div>
+  </article>
+</body></html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&family=Allura&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+/* 03 — Sobre: retrato em arco à esquerda; título com assinatura manuscrita, bio e
+   "Do desenho ao deploy" (sequência numerada: a ordem importa) à direita. */
+body{height:1300px; background: var(--preto-2)}
+.arco-foto { position: absolute; left: 160px; top: 150px; width: 640px; height: 900px; border-radius: 320px 320px 0 0; overflow: hidden; }
+.arco-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; display: block; }
+.arco.a { left: 110px; top: 100px; width: 740px; height: 740px; clip-path: inset(0 0 50% 0); }
+.arco.b { left: 1500px; top: -620px; width: 1100px; height: 1100px; clip-path: inset(50% 50% 0 0); }
+.legenda { position: absolute; left: 160px; top: 1080px; font: 300 15px/1 "Jost"; letter-spacing: .3em; text-transform: uppercase; color: var(--apoio); }
+
+.lado { position: absolute; left: 960px; top: 150px; width: 800px; }
+.lado .titulo { --t: 150px; margin-top: 34px; }
+.lado .script { --s: 128px; position: absolute; left: 300px; top: 150px; white-space: nowrap; }
+.bio { margin-top: 110px; }
+.bio p + p { margin-top: 18px; }
+
+.etapas-tit { position: absolute; left: 960px; top: 720px; font: 400 60px/1 "Gilda Display", serif; }
+.etapas { position: absolute; left: 960px; top: 810px; width: 800px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; row-gap: 40px; list-style: none; border-top: 1px solid var(--fio); padding-top: 40px; }
+.etapas li { display: grid; grid-template-columns: 54px 1fr; column-gap: 14px; }
+.etapas .n { font: 400 58px/.9 "Gilda Display", serif; color: var(--laranja); grid-row: span 3; }
+.etapas h4 { font: 500 16px/1.2 "Jost"; letter-spacing: .28em; text-transform: uppercase; }
+.etapas p { margin-top: 10px; font: 300 19px/1.5 "Jost"; color: var(--apoio); }
+.etapas small { margin-top: 10px; font: 400 13px/1.4 "Jost"; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,244,241,.5); display: block; }
+</style></head>
+<body>
+  <span class="arco a"></span><span class="arco b"></span>
+  <div class="arco-foto"><img src="img/retrato-cor.jpg" alt=""></div>
+  <p class="legenda">Andrey Oliveira · Saquarema, RJ</p>
+
+  <div class="lado">
+    <span class="rotulo"><i></i>Sobre<i></i></span>
+    <h2 class="titulo">Quem é o</h2>
+    <span class="script">DreyODev</span>
+    <div class="bio texto">
+      <p>Sou o Andrey Oliveira, o DreyODev. Estudo Engenharia de Software e moro em Saquarema, na Região dos Lagos.</p>
+      <p>Faço sites e sistemas web de ponta a ponta: penso a página, escrevo o front-end e o back-end, monto o banco de dados e coloco tudo no ar.</p>
+    </div>
+  </div>
+
+  <h3 class="etapas-tit">Do desenho ao deploy</h3>
+  <ol class="etapas">
+    <li><span class="n">1</span><h4>Desenho</h4><p>A página pensada primeiro para o celular, a partir do que o negócio precisa mostrar.</p><small>HTML, CSS, Tailwind</small></li>
+    <li><span class="n">2</span><h4>Front-end</h4><p>A interface que o cliente do seu negócio vai usar, rápida e fácil de ler.</p><small>React, Next.js, TypeScript, JavaScript</small></li>
+    <li><span class="n">3</span><h4>Back-end e banco</h4><p>Formulários, cadastros e painéis quando o site precisa guardar dados.</p><small>Node.js, Express, Python, FastAPI, PostgreSQL</small></li>
+    <li><span class="n">4</span><h4>No ar</h4><p>Publicação com domínio e hospedagem, e o site funcionando de verdade.</p><small>Vercel, Render, Supabase</small></li>
+  </ol>
+</body></html>

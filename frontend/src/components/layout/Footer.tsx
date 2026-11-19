@@ -1,29 +1,25 @@
 import { siteConfig } from "@/config/site";
+import { home } from "@/data/home";
 
-/** Faixa preta final, a mesma família da navegação. */
+/** Rodapé em preto-2: marca, nome e local à esquerda; WhatsApp, LinkedIn e GitHub à direita. */
 export function Footer() {
   return (
-    <footer className="bg-tinta text-papel">
-      <div className="font-rotulo mx-auto flex max-w-[90rem] flex-col gap-3 px-4 py-6 text-sm font-semibold uppercase tracking-[0.12em] sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <footer className="rodape">
+      <div className="rodape-quadro">
         <p>
-          <span className="text-arcade">{siteConfig.brand}</span> · {siteConfig.name} · {siteConfig.location}
+          <b>{siteConfig.brand}</b>
+          <span>
+            {siteConfig.name} · {siteConfig.location}
+          </span>
         </p>
-        <ul className="flex gap-5">
-          <li>
-            <a href={siteConfig.contact.whatsapp} target="_blank" rel="noopener" className="hover:text-arcade hover:underline">
-              WhatsApp
-            </a>
-          </li>
-          <li>
-            <a href={siteConfig.social.linkedin} target="_blank" rel="noopener" className="hover:text-arcade hover:underline">
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href={siteConfig.social.github} target="_blank" rel="noopener" className="hover:text-arcade hover:underline">
-              GitHub
-            </a>
-          </li>
+        <ul>
+          {home.rodape.links.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} target="_blank" rel="noopener">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </footer>

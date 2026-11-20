@@ -191,7 +191,7 @@ Tela 960×600 (`object-position: top`) com borda de 1px fio; meta, nome em Gilda
 Fios em cima e embaixo, nome em Gilda 150px vazado (o "p" atravessa o fio), meta e resumo no meio, status "EM CONSTRUÇÃO" com círculo vazado e "VER O CÓDIGO" à direita. Nome longo quebra dentro da coluna de 900px.
 
 ### Linhas da stack
-Uma linha por área (Front-end, Back-end, Banco de dados, Deploy e infra, Fluxo de trabalho), dados em `src/data/stack.ts`. À esquerda, o nome da área (Jost 500 16px, 0.28em) e uma frase em linguagem simples para quem não é da área; à direita, os nomes das tecnologias em Gilda 88px, separados por uma barra em branco a 30% (oculta para leitores de tela). Sem logos, barras de habilidade, níveis ou anos: o nome é o visual e a lista só tem fatos.
+Uma linha por área (Front-end, Back-end, Banco de dados, Infra e versionamento, Design e organização), dados em `src/data/stack.ts`. À esquerda, o nome da área (Jost 500 16px, 0.28em) e uma frase em linguagem simples para quem não é da área; à direita, os nomes das tecnologias em Gilda 88px, separados por uma barra em branco a 30% (oculta para leitores de tela). Sem logos, barras de habilidade, níveis ou anos: o nome é o visual e a lista só tem fatos.
 
 ### Navigation
 Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda itálico 15px laranja) sobre "Andrey Oliveira" (Gilda 24px), links Jost 16px e a pílula do WhatsApp. No celular (64px): assinatura e botão de 3 traços que abre uma sobreposição preta em tela cheia (links em Gilda, botão laranja), com `aria-expanded`/`aria-controls`, foco preso, Esc fecha e o foco volta ao botão.

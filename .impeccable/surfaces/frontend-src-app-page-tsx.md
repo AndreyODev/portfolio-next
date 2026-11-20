@@ -23,9 +23,9 @@ OWN-WORLD: chão preto (#0c0c0c, faixas vizinhas #161616), branco quente, uma ú
 
 FIDELITY: a referência é `pesquisa/handoff-home/` (imagens em 1920 e 390, HTML conferido, PROMPT.md). Conferir com `pesquisa/handoff-home/verificacao/captura.mjs`; desvios aceitos estão em `pesquisa/redesign/LINGUAGEM.md` ("Implementação").
 
-STORY: em 3 segundos, esse é o Andrey, o DreyODev, dev full stack que faz sites para negócios da Região dos Lagos. Rola, vê os sites no ar com a tela real, conhece quem ele é e as quatro etapas, e chama no WhatsApp na faixa laranja.
+STORY: em 3 segundos, esse é o Andrey, o DreyODev, dev full stack que faz sites para negócios da Região dos Lagos. Rola, vê os sites no ar com a tela real, conhece quem ele é e as quatro etapas, vê as ferramentas que ele usa (Stack) e chama no WhatsApp na faixa laranja.
 
-FIRST VIEWPORT: cabeçalho transparente (assinatura, Entregas/Sobre/Contato, pílula WHATSAPP). Rótulo ANDREY OLIVEIRA com fios; DREYODEV de borda a borda; foto de trabalho à direita com a cabeça na frente do nome; "full stack" em Allura laranja sobre o nome; apoio em caixa alta com "Região dos Lagos" em laranja; botão laranja e o círculo "Ver as entregas". No celular: nome em 74px, foto logo abaixo com a cabeça cobrindo "RE", apoio e botão em largura total, sem caligrafia.
+FIRST VIEWPORT: cabeçalho transparente (assinatura, Entregas/Sobre/Stack/Contato, pílula WHATSAPP). Rótulo ANDREY OLIVEIRA com fios; DREYODEV de borda a borda; foto de trabalho à direita com a cabeça na frente do nome; "full stack" em Allura laranja sobre o nome; apoio em caixa alta com "Região dos Lagos" em laranja; botão laranja e o círculo "Ver as entregas". No celular: nome em 74px, foto logo abaixo com a cabeça cobrindo "RE", apoio e botão em largura total, sem caligrafia.
 
 FINISH: build verificado em 1920 (diferença de pixel ≤ 0,42% por seção, deslocamentos ≤ 1px), 1905, 1536, 1440, 1280, 1024 e 390; DESIGN.md e sidecar regravados; cada raster com o `.webp.json` de procedência.
 

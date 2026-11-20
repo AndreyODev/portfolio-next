@@ -209,7 +209,7 @@ Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda 
 ### Motion
 - Hero, uma vez por visita (`sessionStorage` + `html[data-visto]`): letras do nome sobem uma a uma (60ms de intervalo, 900ms, expo.out), a caligrafia se escreve com `clip-path`, o apoio e o botão sobem, o círculo aparece por último (~1,5s).
 - Entregas, Stack e Projetos: cada linha sobe 24px ao entrar na tela; Sobre: o retrato se revela de baixo para cima. Nos Projetos, a linha de cada série se desenha da primeira versão para a última enquanto a página rola (linha do tempo nomeada `--linha-serie`, da lista). Todos com `animation-timeline: view()`; sem suporte, aparecem prontos.
-- A seção com essas animações usa `overflow: clip`, não `hidden`: `hidden` cria um contêiner de rolagem, a `view()` passa a medir a seção (que não rola) e a animação fica parada. Entregas, Sobre e Stack ainda usam `hidden` (ver LINGUAGEM.md).
+- Toda seção com essas animações usa `overflow: clip`, não `hidden`: `hidden` cria um contêiner de rolagem, a `view()` passa a medir a seção (que não rola) e a animação fica parada. Assim estavam Entregas, Sobre e Stack até 2026-11-20.
 - `prefers-reduced-motion`: tudo pronto e parado.
 
 ## Do's and Don'ts

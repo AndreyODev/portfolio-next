@@ -83,7 +83,7 @@
   flex-wrap: wrap;
   row-gap: 6px;
   list-style: none;
-  /* 10cqw: "Express / FastAPI" (7,65em) ainda cabe numa linha entre as margens de 8,33vw. */
+  /* 10cqw: um par como "Docker / Git" ou "Figma / Trello" cabe numa linha entre as margens de 8,33vw. */
   font: 400 10cqw / 1.05 var(--font-display);
 }
 
@@ -166,7 +166,7 @@
   }
 
   .area {
-    /* Coluna dos nomes com 1140px: "React / Next.js / TypeScript /" cabe numa linha só. */
+    /* Coluna dos nomes com 1140px: três nomes médios ("React / Next.js / TypeScript /") cabem numa linha. */
     grid-template-columns: calc(460 * var(--f)) 1fr;
     gap: 0;
     padding: calc(44 * var(--f)) 0 calc(50 * var(--f));

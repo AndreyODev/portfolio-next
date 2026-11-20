@@ -38,7 +38,7 @@ export const home = {
     rotulo: "Stack",
     titulo: "Ferramentas",
     caligrafia: "de trabalho",
-    intro: "As tecnologias que eu uso para desenhar, construir e manter cada projeto.",
+    intro: "As tecnologias que eu uso para desenhar, construir e publicar cada projeto.",
   },
   contato: {
     rotulo: "Contato",

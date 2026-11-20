@@ -1,0 +1,243 @@
+/*
+ * Contato. Referência: pesquisa/handoff-home/referencia-html/04-contato.html (faixa de 1060px).
+ * Faixa inteira laranja; a elipse preto-2 do Sobre desce sobre ela. Texto em preto.
+ */
+
+.contato {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-laranja);
+  color: var(--color-preto);
+}
+
+/* Borda superior curva: a elipse da faixa anterior (preto-2) desce sobre o laranja. */
+.contato::before {
+  content: "";
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  top: -360px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--color-preto-2);
+}
+
+.quadro {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 120px var(--gutter) 88px;
+}
+
+.arco {
+  border-color: rgb(12 12 12 / 0.22);
+}
+
+.arcoA,
+.arcoB {
+  display: none;
+}
+
+.cab {
+  position: relative;
+}
+
+.rotulo {
+  --rotulo-tam: 13px;
+  color: var(--color-preto);
+}
+
+.titulo {
+  margin-top: 22px;
+  font: 400 18cqw / 0.86 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.caligrafia {
+  display: block;
+  margin: 0 0 0 16cqw;
+  font: 400 15cqw / 1 var(--font-allura), cursive;
+  letter-spacing: normal;
+  white-space: nowrap;
+  rotate: -4deg;
+}
+
+.base {
+  display: grid;
+  gap: 56px;
+  margin-top: 48px;
+}
+
+.chamada {
+  font: 400 19px / 1.5 var(--font-sans);
+  color: rgb(12 12 12 / 0.82);
+}
+
+.botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding: 18px 24px;
+  border-radius: 999px;
+  background: var(--color-preto);
+  color: var(--color-laranja);
+  font: 500 14px / 1 var(--font-sans);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: background-color 300ms var(--ease-saida);
+}
+
+.botao small {
+  font: 400 15px / 1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: rgb(244 244 241 / 0.8);
+}
+
+.botao:hover {
+  background: #262626;
+}
+
+.botao:focus-visible,
+.canais a:focus-visible {
+  outline-color: var(--color-preto);
+}
+
+.canais {
+  border-top: 1.5px solid rgb(12 12 12 / 0.35);
+}
+
+.canais div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1.5px solid rgb(12 12 12 / 0.35);
+}
+
+.canais dt {
+  font: 500 12px / 1 var(--font-sans);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.canais dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font: 400 15px / 1.2 var(--font-sans);
+}
+
+.canais a {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 300ms var(--ease-saida), color 300ms var(--ease-saida);
+}
+
+.canais a:hover {
+  color: rgb(12 12 12 / 0.7);
+  text-decoration-color: rgb(12 12 12 / 0.4);
+}
+
+/* ── Desktop: quadro de 1920 ────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .contato::before {
+    left: calc(-200 * var(--f));
+    right: calc(-200 * var(--f));
+    top: calc(-1720 * var(--f));
+    height: calc(1780 * var(--f));
+  }
+
+  .quadro {
+    padding: calc(200 * var(--f)) var(--gutter) calc(184 * var(--f));
+  }
+
+  .arcoA,
+  .arcoB {
+    display: block;
+  }
+
+  .arcoA {
+    left: calc(1180 * var(--f));
+    top: calc(160 * var(--f));
+    width: calc(1400 * var(--f));
+    height: calc(1400 * var(--f));
+    clip-path: inset(0 50% 45% 0);
+  }
+
+  .arcoB {
+    left: calc(-500 * var(--f));
+    top: calc(520 * var(--f));
+    width: calc(1200 * var(--f));
+    height: calc(1200 * var(--f));
+    clip-path: inset(0 0 60% 40%);
+  }
+
+  .rotulo {
+    --rotulo-tam: max(12px, calc(17 * var(--f)));
+  }
+
+  .titulo {
+    margin-top: calc(34 * var(--f));
+    font-size: calc(210 * var(--f));
+  }
+
+  .caligrafia {
+    position: absolute;
+    left: calc(470 * var(--f));
+    top: calc(190 * var(--f));
+    margin: 0;
+    font-size: calc(168 * var(--f));
+  }
+
+  .base {
+    grid-template-columns: calc(620 * var(--f)) 1fr calc(580 * var(--f));
+    gap: 0;
+    margin-top: calc(200 * var(--f));
+  }
+
+  .acao {
+    grid-column: 1;
+    padding-top: calc(20 * var(--f));
+  }
+
+  .chamada {
+    font-size: max(18px, calc(26 * var(--f)));
+  }
+
+  .botao {
+    display: inline-flex;
+    flex-direction: row;
+    gap: calc(22 * var(--f));
+    height: max(56px, calc(76 * var(--f)));
+    margin-top: calc(62 * var(--f));
+    padding: 0 max(26px, calc(40 * var(--f)));
+    font-size: max(13px, calc(19 * var(--f)));
+    letter-spacing: 0.26em;
+    white-space: nowrap;
+  }
+
+  .botao small {
+    font-size: max(13px, calc(17 * var(--f)));
+  }
+
+  .canais {
+    grid-column: 3;
+  }
+
+  .canais div {
+    grid-template-columns: calc(170 * var(--f)) 1fr;
+    padding: calc(22 * var(--f)) 0;
+  }
+
+  .canais dt {
+    font-size: max(11px, calc(15 * var(--f)));
+  }
+
+  .canais dd {
+    font-size: max(16px, calc(22 * var(--f)));
+  }
+}

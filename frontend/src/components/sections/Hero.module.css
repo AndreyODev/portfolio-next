@@ -1,0 +1,408 @@
+/*
+ * Abertura "Monumental + laranja".
+ * Referência: pesquisa/handoff-home/referencia-html/01-hero.html (1920x1080) e 01-hero-mobile.html (390x844).
+ *
+ * Desktop: tudo vive num "palco" de 1920x1080 escalado por --u (1px da referência), ancorado na base
+ * do hero. --u segue a largura; a altura só reduz a escala quando a tela é baixa demais (o palco pode
+ * perder até 180px do topo, que é só ar acima do rótulo). Acima de 1920px o palco para de crescer.
+ * Celular: o mesmo gesto empilhado, em --m (1px do quadro de 390).
+ */
+
+.hero {
+  --m: calc(100cqw / 390);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  container-type: inline-size;
+  height: calc(844 * var(--m));
+  background: var(--color-preto);
+}
+
+.palco {
+  position: absolute;
+  inset: 0;
+}
+
+.foto,
+.pessoa {
+  position: absolute;
+  top: calc(70 * var(--m));
+  left: 0;
+  width: calc(390 * var(--m));
+  height: calc(520 * var(--m));
+}
+
+.imagem {
+  object-fit: cover;
+  object-position: 30% 0;
+}
+
+.foto {
+  z-index: 1;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 calc(150 * var(--m)), #000 75%, transparent 100%);
+}
+
+.pessoa {
+  z-index: 5;
+  mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+}
+
+.crista,
+.veu,
+.orbitaB,
+.caligrafia,
+.descer,
+.borda {
+  display: none;
+}
+
+.orbita {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid rgb(255 122 26 / 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbitaA {
+  left: calc(-260 * var(--m));
+  top: calc(70 * var(--m));
+  width: calc(820 * var(--m));
+  height: calc(820 * var(--m));
+  clip-path: inset(0 0 70% 0);
+}
+
+.rotulo {
+  position: absolute;
+  z-index: 6;
+  top: calc(128 * var(--m));
+  left: 50%;
+  translate: -50% 0;
+  --rotulo-tam: calc(11 * var(--m));
+  gap: calc(12em / 11);
+  letter-spacing: 0.5em;
+}
+
+.rotulo i,
+.rotulo i:last-child {
+  width: calc(28em / 11);
+  opacity: 1;
+}
+
+.nome {
+  position: absolute;
+  z-index: 4;
+  top: calc(160 * var(--m));
+  left: 50%;
+  translate: -50% 0;
+  font: 400 calc(74 * var(--m)) / 0.8 var(--font-display);
+  letter-spacing: -0.012em;
+  white-space: nowrap;
+  color: var(--color-branco);
+  user-select: none;
+}
+
+.letra {
+  position: relative;
+}
+
+.apoio {
+  position: absolute;
+  z-index: 6;
+  top: calc(610 * var(--m));
+  left: calc(24 * var(--m));
+  right: calc(24 * var(--m));
+  font: 400 calc(14 * var(--m)) / 1.6 var(--font-sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.apoio em {
+  font-style: normal;
+  color: var(--color-laranja);
+}
+
+.acoes {
+  position: absolute;
+  z-index: 6;
+  top: calc(730 * var(--m));
+  left: calc(24 * var(--m));
+  right: calc(24 * var(--m));
+}
+
+.whats {
+  width: 100%;
+  height: calc(56 * var(--m));
+  font-size: calc(14 * var(--m));
+  letter-spacing: 0.24em;
+}
+
+/* ── Desktop: palco de 1920x1080 ─────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .hero {
+    container-type: size;
+    height: clamp(720px, 100svh, 1080px);
+    --u: min(calc(100cqw / 1920), calc((100cqh + 180px) / 1080), 1px);
+    /* Faixa preta que sobra dos lados quando a tela é mais larga que o palco (acima de 1920px). */
+    --sobra: max(0px, calc((100cqw - 1920 * var(--u)) / 2));
+  }
+
+  /* Sem transform aqui: o palco não pode virar contexto de empilhamento (o véu fica entre as camadas). */
+  .palco {
+    inset: auto auto 0 calc(50% - 960 * var(--u));
+    width: calc(1920 * var(--u));
+    height: calc(1080 * var(--u));
+  }
+
+  .foto,
+  .pessoa {
+    top: calc(150 * var(--u));
+    left: calc(700 * var(--u));
+    width: calc(1220 * var(--u));
+    height: calc(930 * var(--u));
+  }
+
+  .imagem {
+    object-position: 50% 0;
+  }
+
+  .foto {
+    mask-image:
+      linear-gradient(to right, transparent 0, #000 calc(240 * var(--u))),
+      linear-gradient(to bottom, transparent 0, #000 calc(200 * var(--u))),
+      linear-gradient(to left, transparent 0, #000 min(var(--sobra), 160px));
+    mask-composite: intersect;
+  }
+
+  .pessoa {
+    mask-image: linear-gradient(to right, transparent 0, #000 calc(150 * var(--u)));
+  }
+
+  .crista,
+  .veu,
+  .orbitaB,
+  .caligrafia,
+  .borda {
+    display: block;
+  }
+
+  .crista {
+    position: absolute;
+    z-index: 2;
+    left: calc(-760 * var(--u));
+    top: calc(-330 * var(--u));
+    width: calc(1780 * var(--u));
+    height: calc(1780 * var(--u));
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgb(12 12 12 / 0.95) 70%, rgb(12 12 12 / 0.86) 100%);
+  }
+
+  .veu {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgb(12 12 12 / 0.45),
+      transparent 22%,
+      transparent 70%,
+      rgb(12 12 12 / 0.55)
+    );
+    pointer-events: none;
+  }
+
+  .orbita {
+    border-width: 1.5px;
+  }
+
+  .orbitaA {
+    left: calc(330 * var(--u));
+    top: calc(-620 * var(--u));
+    width: calc(2100 * var(--u));
+    height: calc(2100 * var(--u));
+    clip-path: inset(0 0 52% 0);
+  }
+
+  .orbitaB {
+    left: calc(-900 * var(--u));
+    top: calc(120 * var(--u));
+    width: calc(2300 * var(--u));
+    height: calc(2300 * var(--u));
+    clip-path: inset(0 30% 60% 30%);
+  }
+
+  .rotulo {
+    top: calc(286 * var(--u));
+    left: calc(436 * var(--u));
+    translate: none;
+    --rotulo-tam: calc(17 * var(--u));
+    gap: calc(22em / 17);
+    letter-spacing: 0.62em;
+  }
+
+  .rotulo i {
+    width: calc(52em / 17);
+    opacity: 0.8;
+  }
+
+  .rotulo i:last-child {
+    width: calc(88em / 17);
+  }
+
+  .nome {
+    top: calc(312 * var(--u));
+    font-size: calc(372 * var(--u));
+  }
+
+  .caligrafia {
+    position: absolute;
+    z-index: 6;
+    left: calc(120 * var(--u));
+    top: calc(498 * var(--u));
+    font: 400 calc(196 * var(--u)) / 1 var(--font-allura), cursive;
+    white-space: nowrap;
+    color: var(--color-laranja);
+    rotate: -4deg;
+  }
+
+  .apoio {
+    top: calc(770 * var(--u));
+    left: calc(160 * var(--u));
+    right: auto;
+    /* Largura proporcional à fonte (600/21), para manter as quebras de linha da referência. */
+    width: max(calc(600 * var(--u)), 343px);
+    font-size: max(12px, calc(21 * var(--u)));
+    line-height: 1.62;
+    letter-spacing: 0.3em;
+  }
+
+  .acoes {
+    top: calc(920 * var(--u));
+    left: calc(160 * var(--u));
+    right: auto;
+    display: flex;
+    align-items: center;
+    gap: calc(40 * var(--u));
+  }
+
+  .whats {
+    width: auto;
+    height: max(42px, calc(62 * var(--u)));
+    padding: 0 max(20px, calc(34 * var(--u)));
+    font-size: max(11px, calc(17 * var(--u)));
+    letter-spacing: 0.26em;
+  }
+
+  .descer {
+    display: flex;
+    align-items: center;
+    gap: calc(18 * var(--u));
+    font: 400 max(10px, calc(15 * var(--u))) / 1.5 var(--font-sans);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .circulo {
+    display: grid;
+    place-items: center;
+    width: max(36px, calc(52 * var(--u)));
+    height: max(36px, calc(52 * var(--u)));
+    border: 1.5px solid rgb(244 244 241 / 0.7);
+    border-radius: 50%;
+    transition: border-color 300ms var(--ease-saida), background-color 300ms var(--ease-saida);
+  }
+
+  .seta {
+    width: 14px;
+    height: 18px;
+    transition: translate 300ms var(--ease-saida);
+  }
+
+  .descer:hover .circulo {
+    border-color: var(--color-laranja);
+  }
+
+  .descer:hover .seta {
+    translate: 0 3px;
+  }
+
+  /* Borda inferior curva: elipse preta subindo da base, abrindo a faixa seguinte. */
+  .borda {
+    position: absolute;
+    z-index: 6;
+    left: calc(-200 * var(--u));
+    right: calc(-200 * var(--u));
+    bottom: calc(-1700 * var(--u));
+    height: calc(1780 * var(--u));
+    border-radius: 50%;
+    background: var(--color-preto);
+  }
+}
+
+/* ── Motion: só sem prefers-reduced-motion; html[data-visto] desliga (.hero-anim em globals.css) ── */
+@media (prefers-reduced-motion: no-preference) {
+  .letra {
+    animation: letra-sobe 900ms cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i) * 60ms) both;
+  }
+
+  .rotulo {
+    animation: aparece 700ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+  }
+
+  .caligrafia {
+    animation: escreve 900ms cubic-bezier(0.65, 0, 0.35, 1) 520ms both;
+  }
+
+  .apoio {
+    animation: sobe 800ms cubic-bezier(0.16, 1, 0.3, 1) 700ms both;
+  }
+
+  .whats {
+    animation: sobe 800ms cubic-bezier(0.16, 1, 0.3, 1) 850ms both;
+  }
+
+  .circulo {
+    animation: circulo 700ms cubic-bezier(0.16, 1, 0.3, 1) 1050ms both;
+  }
+}
+
+/* `top` em vez de transform: os spans continuam inline e o kerning do nome não muda. */
+@keyframes letra-sobe {
+  from {
+    top: 0.48em;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes aparece {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes escreve {
+  from {
+    clip-path: inset(-40% 100% -40% -10%);
+  }
+  to {
+    clip-path: inset(-40% -10% -40% -10%);
+  }
+}
+
+@keyframes sobe {
+  from {
+    translate: 0 24px;
+    opacity: 0;
+  }
+}
+
+@keyframes circulo {
+  from {
+    scale: 0.4;
+    opacity: 0;
+  }
+}

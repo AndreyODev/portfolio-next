@@ -1,118 +1,271 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-18T12:00:00-03:00",
+  "generatedAt": "2026-11-19T00:30:00-03:00",
   "title": "Design System: DreyODev",
   "extensions": {
     "colorMeta": {
-      "arcade": { "role": "primary", "displayName": "Amarelo Arcade", "canonical": "#f7d117", "tonalRamp": ["oklch(28% 0.06 95)", "oklch(40% 0.09 95)", "oklch(52% 0.12 95)", "oklch(64% 0.15 95)", "oklch(76% 0.17 95)", "oklch(87.5% 0.175 95)", "oklch(92% 0.11 95)", "oklch(96% 0.05 95)"] },
-      "selecao": { "role": "secondary", "displayName": "Azul de Seleção", "canonical": "#1f4bff", "tonalRamp": ["oklch(18% 0.08 266)", "oklch(28% 0.15 266)", "oklch(38% 0.22 266)", "oklch(50.5% 0.27 266)", "oklch(62% 0.2 266)", "oklch(74% 0.13 266)", "oklch(85% 0.07 266)", "oklch(95% 0.02 266)"] },
-      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#111111", "tonalRamp": ["#111111", "#2b2b2b", "#454545", "#626262", "#808080", "#a3a3a3", "#c8c8c8", "#ededed"] },
-      "grafite": { "role": "neutral", "displayName": "Grafite", "canonical": "#2b2b2b", "tonalRamp": ["#111111", "#2b2b2b", "#454545", "#626262", "#808080", "#a3a3a3", "#c8c8c8", "#ededed"] },
-      "papel": { "role": "neutral", "displayName": "Papel", "canonical": "#ffffff", "tonalRamp": ["#262626", "#474747", "#6b6b6b", "#8f8f8f", "#b3b3b3", "#d6d6d6", "#f0f0f0", "#ffffff"] }
+      "laranja": {
+        "role": "primary",
+        "displayName": "Laranja",
+        "canonical": "#ff7a1a",
+        "tonalRamp": [
+          "oklch(25% 0.06 50)",
+          "oklch(36% 0.1 50)",
+          "oklch(48% 0.14 50)",
+          "oklch(60% 0.17 50)",
+          "oklch(71.5% 0.19 50)",
+          "oklch(80% 0.13 55)",
+          "oklch(89% 0.07 60)",
+          "oklch(96% 0.02 65)"
+        ]
+      },
+      "laranja-tinta": {
+        "role": "neutral",
+        "displayName": "Laranja Tinta",
+        "canonical": "#170900",
+        "tonalRamp": [
+          "oklch(25% 0.06 50)",
+          "oklch(36% 0.1 50)",
+          "oklch(48% 0.14 50)",
+          "oklch(60% 0.17 50)",
+          "oklch(71.5% 0.19 50)",
+          "oklch(80% 0.13 55)",
+          "oklch(89% 0.07 60)",
+          "oklch(96% 0.02 65)"
+        ]
+      },
+      "preto": {
+        "role": "neutral",
+        "displayName": "Preto",
+        "canonical": "#0c0c0c",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a29",
+          "#454544",
+          "#6b6b69",
+          "#9a9a97",
+          "#cbcbc7",
+          "#f4f4f1"
+        ]
+      },
+      "preto-2": {
+        "role": "neutral",
+        "displayName": "Preto 2",
+        "canonical": "#161616",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a29",
+          "#454544",
+          "#6b6b69",
+          "#9a9a97",
+          "#cbcbc7",
+          "#f4f4f1"
+        ]
+      },
+      "branco": {
+        "role": "neutral",
+        "displayName": "Branco Quente",
+        "canonical": "#f4f4f1",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a29",
+          "#454544",
+          "#6b6b69",
+          "#9a9a97",
+          "#cbcbc7",
+          "#f4f4f1"
+        ]
+      },
+      "apoio": {
+        "role": "neutral",
+        "displayName": "Apoio (branco 72%)",
+        "canonical": "rgba(244,244,241,.72)",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a29",
+          "#454544",
+          "#6b6b69",
+          "#9a9a97",
+          "#cbcbc7",
+          "#f4f4f1"
+        ]
+      },
+      "fio": {
+        "role": "neutral",
+        "displayName": "Fio (branco 18%)",
+        "canonical": "rgba(244,244,241,.18)",
+        "tonalRamp": [
+          "#0c0c0c",
+          "#161616",
+          "#2a2a29",
+          "#454544",
+          "#6b6b69",
+          "#9a9a97",
+          "#cbcbc7",
+          "#f4f4f1"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display (nome)", "purpose": "Só o nome DREYODEV de borda a borda e o 404, inclinado -8°, caixa alta." },
-      "headline": { "displayName": "Headline", "purpose": "Títulos de seção em Big Shoulders 900 caixa alta." },
-      "title": { "displayName": "Title", "purpose": "Subtítulos de bloco, etapas e nome da entrega selecionada." },
-      "body": { "displayName": "Body", "purpose": "Texto corrido em Barlow, 44 a 60ch, algarismos tabulares." },
-      "label": { "displayName": "Label", "purpose": "Navegação, rodapé, rótulos de faixa e metadados em Barlow Condensed caixa alta espaçada." },
-      "label-button": { "displayName": "Label de botão", "purpose": "Rótulo do botão principal, 0.08em." }
+      "display": {
+        "displayName": "Nome monumental",
+        "purpose": "Só o DREYODEV do hero, sangrando nas bordas, com a cabeça do Andrey cobrindo a base."
+      },
+      "headline": {
+        "displayName": "Título de seção",
+        "purpose": "Sites, Quem é o, Próxima fase: (Gilda 400)."
+      },
+      "title": {
+        "displayName": "Nome do projeto",
+        "purpose": "Linhas de entrega (104px) e faixa vazada (150px)."
+      },
+      "script": {
+        "displayName": "Caligrafia",
+        "purpose": "Uma palavra em Allura laranja por seção, -4°, sobre o título."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Intros, resumos e bio em Jost 300, cor apoio."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Caixa alta muito espaçada entre fios, laranja."
+      },
+      "label-button": {
+        "displayName": "Botão",
+        "purpose": "Pílulas do WhatsApp."
+      }
     },
-    "shadows": [
-      { "name": "anel-selecao", "value": "0 0 0 9px var(--color-tinta), 0 0 0 12px var(--color-selecao)", "purpose": "Contorno azul duplo do slot selecionado, junto com outline 3px selecao offset 3px." },
-      { "name": "contorno-adesivo", "value": "drop-shadow(4px 0 0 var(--contorno)) drop-shadow(-4px 0 0 var(--contorno)) drop-shadow(0 4px 0 var(--contorno)) drop-shadow(0 -4px 0 var(--contorno)) drop-shadow(3px 0 0 var(--color-tinta)) drop-shadow(-3px 0 0 var(--color-tinta)) drop-shadow(0 3px 0 var(--color-tinta)) drop-shadow(0 -3px 0 var(--color-tinta))", "purpose": "Filtro do retrato recortado: branco por dentro, tinta por fora. Não é sombra de elevação." }
-    ],
+    "shadows": [],
     "motion": [
-      { "name": "ease-trava", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Easing único da entrada." },
-      { "name": "duracao-entrada", "value": "600ms", "purpose": "Entrada do nome e do retrato; retrato com 250ms de atraso. Só com prefers-reduced-motion: no-preference." }
+      {
+        "name": "ease-saida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrada das letras, hover das telas (400ms) e transições de estado (300ms)."
+      },
+      {
+        "name": "letra-sobe",
+        "value": "900ms, 60ms de intervalo por letra",
+        "purpose": "Abertura do hero, uma vez por visita."
+      },
+      {
+        "name": "entra-na-tela",
+        "value": "animation-timeline: view(), 24px",
+        "purpose": "Linhas das Entregas e retrato do Sobre; sem suporte, aparecem prontos."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" }
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "quadro",
+        "value": "1920px"
+      }
     ]
   },
   "components": [
     {
-      "name": "Botão principal",
+      "name": "Botão primário",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Chamada para o WhatsApp: fundo tinta, texto arcade, triângulo de play em SVG.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg aria-hidden=\"true\" viewBox=\"0 0 12 14\" width=\"12\" height=\"14\"><path d=\"M0 0 L12 7 L0 14 Z\" fill=\"currentColor\"/></svg>Chamar no WhatsApp</a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; background: var(--color-tinta, #111111); color: var(--color-arcade, #f7d117); font-family: var(--font-rotulo, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 24px; border-radius: 0; text-decoration: none; outline-offset: 3px; transition: outline 0.15s; } .ds-btn-primary:hover { outline: 3px solid var(--color-tinta, #111111); } .ds-btn-primary:focus-visible { outline: 3px solid var(--color-selecao, #1f4bff); }"
+      "description": "Pílula laranja do WhatsApp.",
+      "html": "<a class=\"ds-btn-laranja\" href=\"#\">Chamar no WhatsApp</a>",
+      "css": ".ds-btn-laranja{display:inline-flex;align-items:center;height:62px;padding:0 34px;border-radius:999px;background:#ff7a1a;color:#170900;font:500 17px/1 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;transition:background-color .3s cubic-bezier(.16,1,.3,1)}.ds-btn-laranja:hover{background:#ff9445}.ds-btn-laranja:focus-visible{outline:2px solid #ff7a1a;outline-offset:4px}"
     },
     {
-      "name": "Cartão do jogador",
-      "kind": "card",
-      "refersTo": "card-jogador",
-      "description": "Ficha branca com traço de 3px: campos reais em rótulo + valor.",
-      "html": "<div class=\"ds-card\"><dl class=\"ds-card-ficha\"><dt>Nome</dt><dd>Andrey Oliveira</dd><dt>Classe</dt><dd>Desenvolvedor full stack</dd><dt>Base</dt><dd>Saquarema, RJ</dd></dl><p class=\"ds-card-pitch\">Faço sites para negócios da Região dos Lagos, do desenho ao deploy.</p></div>",
-      "css": ".ds-card { background: var(--color-papel, #fff); color: var(--color-tinta, #111); border: 3px solid var(--color-tinta, #111); border-radius: 0; padding: 24px; max-width: 30rem; } .ds-card-ficha { display: grid; grid-template-columns: auto 1fr; column-gap: 20px; row-gap: 4px; margin: 0; font-family: var(--font-rotulo, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 1.125rem; text-transform: uppercase; } .ds-card-ficha dt { color: var(--color-grafite, #2b2b2b); letter-spacing: 0.14em; } .ds-card-ficha dd { margin: 0; letter-spacing: 0.04em; } .ds-card-pitch { margin: 16px 0 0; padding-top: 16px; border-top: 3px solid var(--color-tinta, #111); font-family: var(--font-sans, Barlow, sans-serif); font-size: 1.125rem; line-height: 1.375; }"
+      "name": "Botão sobre o laranja",
+      "kind": "button",
+      "refersTo": "button-on-orange",
+      "description": "Pílula preta do Contato com o número.",
+      "html": "<div style=\"background:#ff7a1a;padding:24px\"><a class=\"ds-btn-preto\" href=\"#\">Chamar no WhatsApp <small>(22) 99756-8439</small></a></div>",
+      "css": ".ds-btn-preto{display:inline-flex;align-items:center;gap:22px;height:76px;padding:0 40px;border-radius:999px;background:#0c0c0c;color:#ff7a1a;font:500 19px/1 Jost,sans-serif;letter-spacing:.26em;text-transform:uppercase;text-decoration:none}.ds-btn-preto small{font:400 17px/1 Jost,sans-serif;letter-spacing:.08em;text-transform:none;color:rgba(244,244,241,.8)}.ds-btn-preto:hover{background:#262626}.ds-btn-preto:focus-visible{outline:2px solid #0c0c0c;outline-offset:4px}"
     },
     {
-      "name": "Faixa de navegação",
+      "name": "Pílula do cabeçalho",
       "kind": "nav",
-      "refersTo": "faixa",
-      "description": "Faixa preta de 48px com rótulos condensados; hover em arcade sublinhado.",
-      "html": "<nav class=\"ds-faixa\"><a href=\"#\" class=\"ds-faixa-marca\">Andrey Oliveira</a><ul><li><a href=\"#\">Entregas</a></li><li><a href=\"#\">Sobre</a></li><li><a href=\"#\">Contato</a></li></ul></nav>",
-      "css": ".ds-faixa { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 24px; background: var(--color-tinta, #111); color: var(--color-papel, #fff); font-family: var(--font-rotulo, 'Barlow Condensed', sans-serif); font-weight: 700; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; } .ds-faixa ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; } .ds-faixa a { color: inherit; text-decoration: none; text-underline-offset: 0.2em; text-decoration-thickness: 2px; } .ds-faixa ul a:hover { color: var(--color-arcade, #f7d117); text-decoration: underline; } .ds-faixa a:focus-visible { outline: 3px solid var(--color-selecao, #1f4bff); outline-offset: 3px; }"
+      "refersTo": "nav-pill",
+      "description": "WhatsApp no cabeçalho, contorno laranja.",
+      "html": "<a class=\"ds-pilula\" href=\"#\">WhatsApp <i></i></a>",
+      "css": ".ds-pilula{display:inline-flex;align-items:center;gap:14px;height:44px;padding:0 26px;border:1px solid rgba(255,122,26,.7);border-radius:999px;color:#ff7a1a;font:400 14px/1 Jost,sans-serif;letter-spacing:.34em;text-transform:uppercase;text-decoration:none;background:#0c0c0c}.ds-pilula i{width:6px;height:6px;border-radius:50%;background:currentColor}.ds-pilula:hover{background:#ff7a1a;color:#170900}"
     },
     {
-      "name": "Slots de entrega",
+      "name": "Rótulo com fios",
       "kind": "custom",
-      "refersTo": "slot-no-ar",
-      "description": "Cheio = no ar; só contorno = em construção; selecionado = anel azul duplo; hover = outline papel.",
-      "html": "<div class=\"ds-slots\"><button class=\"ds-slot ds-slot-cheio ds-slot-ativo\" aria-pressed=\"true\">EG</button><button class=\"ds-slot ds-slot-cheio\" aria-pressed=\"false\">SV</button><button class=\"ds-slot\" aria-pressed=\"false\">DR</button></div>",
-      "css": ".ds-slots { display: flex; gap: 16px; padding: 20px 24px; background: var(--color-tinta, #111); } .ds-slot { display: grid; place-items: center; width: 80px; height: 80px; border: 3px solid var(--color-papel, #fff); border-radius: 0; background: transparent; color: var(--color-papel, #fff); font-family: var(--font-display, 'Big Shoulders', sans-serif); font-weight: 900; font-size: 1.875rem; text-transform: uppercase; cursor: pointer; transition: outline 0.15s, box-shadow 0.15s; } .ds-slot-cheio { background: var(--color-papel, #fff); color: var(--color-tinta, #111); } .ds-slot:hover { outline: 3px solid var(--color-papel, #fff); outline-offset: 3px; } .ds-slot-ativo, .ds-slot-ativo:hover { outline: 3px solid var(--color-selecao, #1f4bff); outline-offset: 3px; box-shadow: 0 0 0 9px var(--color-tinta, #111), 0 0 0 12px var(--color-selecao, #1f4bff); } .ds-slot:focus-visible { outline: 3px solid var(--color-selecao, #1f4bff); outline-offset: 3px; }"
+      "description": "Caixa alta espaçada entre dois fios, acima de cada título.",
+      "html": "<span class=\"ds-rotulo\"><i></i>Entregas<i></i></span>",
+      "css": ".ds-rotulo{display:inline-flex;align-items:center;gap:22px;font:400 17px/1 Jost,sans-serif;letter-spacing:.62em;text-transform:uppercase;color:#ff7a1a}.ds-rotulo i{display:block;width:52px;height:1px;background:currentColor;opacity:.8}.ds-rotulo i:last-child{width:88px}"
     },
     {
-      "name": "Lista de contato",
+      "name": "Link com seta",
       "kind": "custom",
-      "description": "Lista rótulo + valor separada por traços de 3px, sobre amarelo.",
-      "html": "<dl class=\"ds-canais\"><div><dt>E-mail</dt><dd><a href=\"#\">nome@exemplo.com</a></dd></div><div><dt>GitHub</dt><dd><a href=\"#\">AndreyODev</a></dd></div></dl>",
-      "css": ".ds-canais { margin: 0; padding: 0 24px; background: var(--color-arcade, #f7d117); color: var(--color-tinta, #111); border-top: 3px solid var(--color-tinta, #111); } .ds-canais div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 3px solid var(--color-tinta, #111); } .ds-canais dt { font-family: var(--font-rotulo, 'Barlow Condensed', sans-serif); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; } .ds-canais dd { margin: 0; } .ds-canais a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; } .ds-canais a:hover { color: var(--color-grafite, #2b2b2b); } .ds-canais a:focus-visible { outline: 3px solid var(--color-selecao, #1f4bff); outline-offset: 3px; }"
+      "description": "Abrir o site / Ver o código.",
+      "html": "<a class=\"ds-link\" href=\"#\">Abrir o site <svg viewBox=\"0 0 14 14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" width=\"14\" height=\"14\"><path d=\"M3 11L11 3M5 3h6v6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(244,244,241,.18);font:400 15px/1 Jost,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#f4f4f1;text-decoration:none;transition:color .3s,border-color .3s}.ds-link:hover{color:#ff7a1a;border-color:#ff7a1a}"
     },
     {
-      "name": "Moldura inclinada",
+      "name": "Título com caligrafia",
       "kind": "custom",
-      "description": "Paralelogramo de traço 3px com a foto contra-inclinada por dentro; preto fora da abertura.",
-      "html": "<div class=\"ds-moldura\"><div class=\"ds-moldura-foto\"></div></div>",
-      "css": ".ds-moldura { width: 280px; aspect-ratio: 4 / 5; overflow: hidden; transform: skewX(-6deg); border: 3px solid var(--color-tinta, #111); background: var(--color-tinta, #111); } .ds-moldura-foto { width: 100%; height: 100%; transform: skewX(6deg) scale(1.1); background: linear-gradient(var(--color-grafite, #2b2b2b), var(--color-tinta, #111)); }"
+      "description": "Gilda 400 gigante com uma palavra Allura laranja por cima.",
+      "html": "<h2 class=\"ds-titulo\">Sites <span>no ar</span></h2>",
+      "css": ".ds-titulo{position:relative;font:400 120px/.86 'Gilda Display',serif;letter-spacing:-.01em;color:#f4f4f1}.ds-titulo span{position:absolute;left:250px;top:90px;font:400 80px/1 Allura,cursive;letter-spacing:normal;color:#ff7a1a;rotate:-4deg;white-space:nowrap}"
     }
   ],
   "narrative": {
-    "northStar": "A Tela de Seleção de Personagem",
-    "overview": "O visitante não lê um currículo: ele escolhe o jogador. O sistema vem das telas de seleção de jogos de luta e arcade: um chão amarelo saturado, tinta preta em traço único, um cartão branco de ficha e um azul que só existe onde algo está selecionado. A densidade é de tela de jogo, com pouca coisa, tudo grande e chapado, e cada cor carrega um único significado.\n\nA forma é reta e plana: nenhum canto arredondado, nenhuma sombra de profundidade, nenhum gradiente. A energia vem da inclinação (nome e painéis em paralelogramo), da escala extrema da tipografia display e do contorno de adesivo no retrato recortado. Estado se comunica por traço (espessura e contorno duplicado), não por troca de cor.\n\nO mundo recusa o portfólio padrão de desenvolvedor: fundo escuro, \"Olá, eu sou\", grade de três cards, fileira de badges de tecnologia, barras de habilidade, nível ou XP. A ficha só tem fatos.",
+    "northStar": "Monumental + laranja",
+    "overview": "O nome do Andrey em escala de letreiro, sangrando nas duas bordas da tela, com a cabeça dele (recortada da própria foto de trabalho) cobrindo a base do \"O\", o mesmo gesto da abertura ALGODÃO da pousada-algodao. O chão é preto, o texto é um branco quente e existe uma única cor, o laranja, que aparece na caligrafia, num destaque por bloco, no botão principal, nos fios e nos arcos.\n\nA densidade é baixa e editorial: cada seção tem um rótulo com fios, um título enorme em Gilda Display e uma palavra manuscrita em Allura por cima. As provas são reais (telas dos sites publicados, em cor natural). O preto não fica sozinho: a faixa de Contato é inteira laranja, o contrapeso que tira o \"ar de luto\".",
     "keyCharacteristics": [
-      "Uma cor, um significado: amarelo é chão, preto é tinta e faixa, branco é cartão e adesivo, azul é seleção.",
-      "Traço único de 3px em tinta; cantos sempre retos.",
-      "Big Shoulders 900 em caixa alta, gigante e inclinada; Barlow Condensed espaçada para rótulos; Barlow no texto.",
-      "Paralelogramos inclinados como moldura e painel.",
-      "Faixas pretas separam as telas (navegação, entregas, rodapé).",
-      "Uma única entrada animada por página, desligada com `prefers-reduced-motion`."
+      "Nome monumental com oclusão: só na abertura.",
+      "Uma cor: laranja #ff7a1a; todo o resto é preto, preto-2 e branco.",
+      "Gilda Display sempre em peso 400; a hierarquia vem do tamanho.",
+      "Caligrafia Allura inclinada -4°, uma por seção, nunca sobre o rosto.",
+      "Arcos finos laranja como ambiente e bordas curvas entre faixas."
     ],
     "rules": [
-      { "name": "The Uma Cor, Um Significado Rule", "body": "Cada cor tem um papel e só um. Se uma nova peça precisa de cor, ela herda o significado da cor que usa; não existe cor de enfeite.", "section": "colors" },
-      { "name": "The Azul É Seleção Rule", "body": "`selecao` aparece apenas no item escolhido, no foco e no painel atrás do personagem selecionado. Molduras inclinadas fora da abertura são pretas. Azul em botão, título ou decoração é proibido.", "section": "colors" },
-      { "name": "The Inclinação É do Nome Rule", "body": "A inclinação de -8° vale para texto display de uma frase só (o nome, o 404, a chamada final). Títulos de seção comuns ficam retos.", "section": "typography" },
-      { "name": "The Número Vazado Rule", "body": "Numeração de etapas usa o algarismo em display com contorno de 2px em tinta e miolo transparente, ao lado do título cheio.", "section": "typography" },
-      { "name": "The Traço, Não Sombra Rule", "body": "Hover e seleção aumentam ou duplicam o contorno (outline de 3px com afastamento de 3px); nunca acrescentam sombra difusa nem deslocada.", "section": "elevation" }
+      {
+        "name": "The One Voice Rule",
+        "body": "O laranja é a única cor. Nada de segunda cor de destaque, gradiente em texto ou cinza solto: secundário é branco com opacidade.",
+        "section": "colors"
+      },
+      {
+        "name": "The Orange Floor Rule",
+        "body": "A faixa de Contato é inteira laranja (texto e botão em preto). Não troque por preto: uma página toda escura com fotos foi lida como luto.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Weight Rule",
+        "body": "Gilda sempre 400. Para hierarquia, mude o tamanho, nunca o peso.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Script Rule",
+        "body": "Uma caligrafia por seção, sobreposta ao título. No celular, só se não cobrir rosto nem texto (no hero do celular ela não aparece).",
+        "section": "typography"
+      },
+      {
+        "name": "The Occlusion Rule",
+        "body": "O recorte (trabalhando-hero-pessoa.webp) usa exatamente a mesma caixa, object-fit, object-position e sizes da foto de fundo. Se um mudar, o outro muda junto.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "**Do** usar o traço único de 3px em tinta para toda borda e divisor.",
-      "**Do** reservar `selecao` para seleção, foco e o painel atrás do personagem escolhido.",
-      "**Do** comunicar estado por traço: outline de 3px com afastamento de 3px no hover, anel duplo na seleção.",
-      "**Do** separar telas com faixas pretas e rotulá-las em Barlow Condensed caixa alta.",
-      "**Do** dar a cada nova seção composição própria dentro da grade de 10 colunas.",
-      "**Do** manter a ficha só com fatos (nome, classe, base, datas reais)."
+      "Do manter o laranja #ff7a1a como a única cor e o secundário como branco com opacidade.",
+      "Do usar fotos e telas em cor natural, cada raster com o .webp.json de procedência ao lado.",
+      "Do tirar todo texto de src/config/site.ts e src/data/ (inclusive src/data/home.ts).",
+      "Do manter as duas camadas da foto do hero com as mesmas medidas e o mesmo sizes.",
+      "Do conferir mudanças visuais com pesquisa/handoff-home/verificacao/captura.mjs contra referencia-visual/."
     ],
     "donts": [
-      "**Don't** arredondar cantos nem usar sombra difusa ou deslocada.",
-      "**Don't** usar azul fora da seleção, nem cor nova sem significado.",
-      "**Don't** repetir o palco da abertura (nome gigante + retrato + cartão) em outra seção.",
-      "**Don't** usar barras de habilidade, nível, XP ou números inventados.",
-      "**Don't** usar \"Olá, eu sou\", grade de três cards ou fileira de badges de tecnologia.",
-      "**Don't** colocar sobretítulo acima de título, nem emoji ou caractere unicode no lugar de ícone (ícones em SVG)."
+      "Don't usar vinho, carvão, marinho, papel claro, tijolo ou verde-garrafa; nem Big Shoulders, Bricolage ou Bodoni.",
+      "Don't deixar a página inteira em preto com fotos P&B: o Contato fica laranja.",
+      "Don't pôr caligrafia sobre o rosto do Andrey.",
+      "Don't usar Gilda em outro peso, gradiente em texto ou uma segunda cor de destaque.",
+      "Don't repetir o nome monumental com oclusão fora da abertura."
     ]
   }
 }

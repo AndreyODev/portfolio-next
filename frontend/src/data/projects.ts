@@ -1,8 +1,9 @@
 import type { Project } from "@/types/project";
 
 /**
- * Entregas exibidas na tábua. Para adicionar um projeto, copie um bloco e ajuste.
- * Ordem não importa: o site ordena pela data.
+ * Entregas exibidas na home. Para adicionar um projeto, copie um bloco e ajuste.
+ * O site ordena pela data (mais recente primeiro); empate mantém a ordem do arquivo.
+ * Com `image`, o projeto vira uma linha com a tela; sem, uma faixa tipográfica.
  *
  * `date` abaixo = mês de criação do repositório no GitHub. Ajuste se o site
  * entrou no ar em outro mês.
@@ -18,6 +19,10 @@ export const projects: Project[] = [
     stack: ["JavaScript"],
     repoUrl: "https://github.com/AndreyODev/estrela-grill-churrascaria",
     liveUrl: "https://estrela-grill-churrascaria-psi.vercel.app",
+    image: {
+      src: "/images/entregas/tela-estrela-grill.webp",
+      alt: "Tela inicial do site da Estrela Grill: espeto de carne e o título Sinta o sabor da brasa.",
+    },
   },
   {
     slug: "sushi-vaz",
@@ -29,6 +34,10 @@ export const projects: Project[] = [
     stack: ["TypeScript"],
     repoUrl: "https://github.com/AndreyODev/landing-page-sushi-vaz",
     liveUrl: "https://landing-page-sushi-vaz.vercel.app",
+    image: {
+      src: "/images/entregas/tela-sushi-vaz.webp",
+      alt: "Tela inicial do site do Sushi Vaz: título Deixe com o chef e uma peça de sushi.",
+    },
   },
   {
     slug: "dropaai",
@@ -42,5 +51,5 @@ export const projects: Project[] = [
   },
 ];
 
-/** Mais antigo primeiro (ordem da curva). Empate mantém a ordem do arquivo. */
-export const projectsByDate = [...projects].sort((a, b) => a.date.localeCompare(b.date));
+/** Mais recente primeiro. `sort` é estável: empate mantém a ordem do arquivo. */
+export const projectsRecentFirst = [...projects].sort((a, b) => b.date.localeCompare(a.date));

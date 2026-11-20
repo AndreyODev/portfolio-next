@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&family=Allura&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+/* 04 — Contato + rodapé: a única faixa inteira em laranja (contrapeso ao preto),
+   título monumental com caligrafia, WhatsApp em pílula preta, canais à direita; rodapé preto. */
+body{height:1200px; background: var(--preto-2)}
+.faixa { position: absolute; left: 0; right: 0; top: 0; height: 1060px; background: var(--laranja); color: var(--preto); overflow: hidden; }
+.faixa::before { content: ""; position: absolute; left: -200px; right: -200px; top: -1720px; height: 1780px; border-radius: 50%; background: var(--preto-2); }
+.faixa .arco { border-color: rgba(12,12,12,.22); }
+.arco.a { left: 1180px; top: 160px; width: 1400px; height: 1400px; clip-path: inset(0 50% 45% 0); }
+.arco.b { left: -500px; top: 520px; width: 1200px; height: 1200px; clip-path: inset(0 0 60% 40%); }
+.faixa .rotulo { color: var(--preto); } .faixa .rotulo i { background: var(--preto); }
+.cab { position: absolute; left: 160px; top: 200px; }
+.cab .titulo { --t: 210px; margin-top: 34px; }
+.cab .script { --s: 168px; color: var(--preto); position: absolute; left: 470px; top: 190px; white-space: nowrap; }
+.chamada { position: absolute; left: 160px; top: 660px; width: 620px; font: 400 26px/1.5 "Jost"; color: rgba(12,12,12,.82); }
+.btn-preto { position: absolute; left: 160px; top: 800px; display: inline-flex; align-items: center; gap: 22px; height: 76px; padding: 0 40px; background: var(--preto); color: var(--laranja); border-radius: 999px; font: 500 19px/1 "Jost"; letter-spacing: .26em; text-transform: uppercase; }
+.btn-preto small { font: 400 17px/1 "Jost"; letter-spacing: .08em; color: var(--branco); text-transform: none; opacity: .8; }
+
+.canais { position: absolute; left: 1180px; top: 640px; width: 580px; border-top: 1.5px solid rgba(12,12,12,.35); }
+.canais div { display: grid; grid-template-columns: 170px 1fr; align-items: baseline; padding: 22px 0; border-bottom: 1.5px solid rgba(12,12,12,.35); }
+.canais dt { font: 500 15px/1 "Jost"; letter-spacing: .3em; text-transform: uppercase; }
+.canais dd { font: 400 22px/1.2 "Jost"; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+
+.rodape { position: absolute; left: 160px; right: 160px; top: 1060px; height: 140px; display: flex; align-items: center; justify-content: space-between; font: 400 14px/1 "Jost"; letter-spacing: .26em; text-transform: uppercase; color: var(--apoio); }
+.rodape b { font: 400 22px/1 "Gilda Display"; letter-spacing: 0; text-transform: none; color: var(--branco); margin-right: 18px; }
+.rodape ul { display: flex; gap: 40px; list-style: none; }
+</style></head>
+<body>
+  <section class="faixa">
+    <span class="arco a"></span><span class="arco b"></span>
+    <div class="cab">
+      <span class="rotulo"><i></i>Contato<i></i></span>
+      <h2 class="titulo">Próxima fase:</h2>
+      <span class="script">o seu site.</span>
+    </div>
+    <p class="chamada">Me conte o que o seu negócio precisa. A conversa começa no WhatsApp.</p>
+    <span class="btn-preto">Chamar no WhatsApp <small>(22) 99756-8439</small></span>
+    <dl class="canais">
+      <div><dt>E-mail</dt><dd>andreyoliveira72005@gmail.com</dd></div>
+      <div><dt>LinkedIn</dt><dd>andrey-oliveira-dev</dd></div>
+      <div><dt>GitHub</dt><dd>AndreyODev</dd></div>
+    </dl>
+  </section>
+  <footer class="rodape">
+    <p><b>DreyODev</b>Andrey Oliveira · Saquarema, RJ</p>
+    <ul><li>WhatsApp</li><li>LinkedIn</li><li>GitHub</li></ul>
+  </footer>
+</body></html>

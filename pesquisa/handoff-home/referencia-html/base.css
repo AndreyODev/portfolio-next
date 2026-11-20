@@ -1,0 +1,22 @@
+/* Linguagem "Monumental P&B + laranja" — base comum das maquetes das seções (1920 px). */
+:root { --preto: #0c0c0c; --preto-2: #161616; --branco: #f4f4f1; --apoio: rgba(244,244,241,.72); --laranja: #ff7a1a; --laranja-tinta: #170900; --fio: rgba(244,244,241,.18); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; }
+body { position: relative; overflow: hidden; background: var(--preto); color: var(--branco); font-family: "Jost", sans-serif; }
+
+.rotulo { display: inline-flex; align-items: center; gap: 22px; font: 400 17px/1 "Jost"; letter-spacing: .62em; color: var(--laranja); text-transform: uppercase; }
+.rotulo i { display: block; height: 1px; background: var(--laranja); opacity: .8; width: 52px; }
+.rotulo i:last-child { width: 88px; }
+
+.titulo { font: 400 var(--t, 160px)/.86 "Gilda Display", serif; letter-spacing: -.01em; }
+.script { font: 400 var(--s, 150px)/1 "Allura", cursive; color: var(--laranja); transform: rotate(-4deg); display: inline-block; }
+.apoio { font: 400 21px/1.62 "Jost"; letter-spacing: .3em; text-transform: uppercase; }
+.apoio em, em.laranja { font-style: normal; color: var(--laranja); }
+.texto { font: 300 24px/1.6 "Jost"; color: var(--apoio); }
+
+.btn-laranja { display: inline-flex; align-items: center; gap: 14px; height: 62px; padding: 0 34px; background: var(--laranja); color: var(--laranja-tinta); border-radius: 999px; font: 500 17px/1 "Jost"; letter-spacing: .26em; text-transform: uppercase; }
+.link-seta { display: inline-flex; align-items: center; gap: 12px; font: 400 15px/1 "Jost"; letter-spacing: .28em; text-transform: uppercase; color: var(--branco); padding-bottom: 8px; border-bottom: 1px solid var(--fio); }
+.link-seta svg { width: 14px; height: 14px; }
+
+.arco { position: absolute; border: 1.5px solid rgba(255,122,26,.42); border-radius: 50%; pointer-events: none; }
+.borda-curva { position: absolute; left: -200px; right: -200px; height: 1780px; border-radius: 50%; background: var(--preto); }

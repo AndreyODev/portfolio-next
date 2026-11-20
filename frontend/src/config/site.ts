@@ -7,7 +7,11 @@ export const siteConfig = {
   /** Marca escrita gigante na abertura (pedido do Andrey). */
   brand: "DreyODev",
   role: "Desenvolvedor full stack",
+  /** Assinatura curta acima do nome, no cabeçalho. */
+  tagline: "dev full stack",
   pitch: "Faço sites para negócios da Região dos Lagos, do desenho ao deploy.",
+  /** Trecho do pitch destacado em laranja no hero. */
+  pitchHighlight: "Região dos Lagos",
   description: "Andrey Oliveira faz sites para negócios da Região dos Lagos, do desenho ao deploy.",
   locale: "pt-BR",
   nav: [
@@ -24,7 +28,9 @@ export const siteConfig = {
   },
   social: {
     github: "https://github.com/AndreyODev",
+    githubLabel: "AndreyODev",
     linkedin: "https://www.linkedin.com/in/andrey-oliveira-dev/",
+    linkedinLabel: "andrey-oliveira-dev",
   },
 } as const;
 

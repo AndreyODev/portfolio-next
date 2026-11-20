@@ -12,5 +12,5 @@ Nada é instalado na raiz. Detalhes do frontend em [frontend/README.md](frontend
 ## Próximos passos
 
 1. Design definido: ver [DESIGN.md](DESIGN.md) (direção "Seleção de Personagem").
-2. Cadastrar todos os projetos em `frontend/src/data/projects.ts` e revisar os textos em `frontend/src/data/about.ts`.
+2. Cadastrar todos os projetos em `frontend/src/data/projects.ts`, revisar os textos em `frontend/src/data/about.ts` e manter a lista de tecnologias em `frontend/src/data/stack.ts`.
 3. Se precisar, criar `backend/` como servidor próprio e conectar pelo `NEXT_PUBLIC_API_URL`.

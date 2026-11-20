@@ -34,6 +34,12 @@ export const home = {
     retratoAlt: "Andrey Oliveira, de camiseta branca, olhando para a câmera.",
     processoTitulo: "Do desenho ao deploy",
   },
+  stack: {
+    rotulo: "Stack",
+    titulo: "Ferramentas",
+    caligrafia: "de trabalho",
+    intro: "As tecnologias que eu uso para desenhar, construir e manter cada projeto.",
+  },
   contato: {
     rotulo: "Contato",
     titulo: "Próxima fase:",

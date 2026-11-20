@@ -112,8 +112,8 @@ Preto como chão, branco quente para ler e o laranja como única voz.
 - **Laranja** (#ff7a1a): caligrafias, destaque de uma expressão por bloco ("Região dos Lagos"), botão principal, rótulos e seus fios, arcos (1.5px a 42–45%), ponto de status "no ar", foco do teclado. Sobre o preto: 7,5:1.
 
 ### Neutral
-- **Preto** (#0c0c0c): chão do hero e das Entregas.
-- **Preto 2** (#161616): faixas vizinhas (Sobre e rodapé) e a elipse que desce sobre o Contato.
+- **Preto** (#0c0c0c): chão do hero, das Entregas e da Stack, e a elipse que desce sobre o Contato.
+- **Preto 2** (#161616): faixas vizinhas (Sobre e rodapé).
 - **Branco** (#f4f4f1): nome, títulos e texto principal.
 - **Apoio** (branco a 72%): texto secundário (resumos, bio, meta). 9,3:1 sobre o preto, 8,9:1 sobre o preto 2.
 - **Fio** (branco a 18%): bordas das telas, linhas das faixas e da grade de etapas.
@@ -152,6 +152,7 @@ Preto como chão, branco quente para ler e o laranja como única voz.
 - **Hero:** `100svh` entre 720 e 1080px. Celular (<1024px): composição própria em `--m = 100cqw/390`.
 - **Entregas:** cabeçalho de 470px; linhas de 600px com tela 960×600 e texto de 560px a 100px dela, alternando lados pela ordem; 80px entre linhas; a faixa tipográfica tem coluna de nome de 900px.
 - **Sobre:** retrato em arco 640×900 + coluna de 800px a 160px dele; etapas em grade 2×2.
+- **Stack** (sem maquete; composição própria em 2026-11-20): cabeçalho de 400px (título Gilda 150px, caligrafia 128px, intro de 440px a 1160px da margem); uma linha por área entre fios, com coluna de 460px para a área (rótulo + frase) e os nomes em Gilda 88px na coluna restante. Celular: título 14cqw, nomes 10cqw.
 - **Contato:** faixa de 1060px; chamada e botão à esquerda (620px), canais à direita (580px).
 - **Celular:** tudo empilha; tela em largura total antes do texto; etapas em 1 coluna; rodapé em 2 linhas. Nenhuma página tem rolagem horizontal (`body { overflow-x: clip }`).
 
@@ -189,12 +190,15 @@ Tela 960×600 (`object-position: top`) com borda de 1px fio; meta, nome em Gilda
 ### Faixa tipográfica (projeto sem `image`)
 Fios em cima e embaixo, nome em Gilda 150px vazado (o "p" atravessa o fio), meta e resumo no meio, status "EM CONSTRUÇÃO" com círculo vazado e "VER O CÓDIGO" à direita. Nome longo quebra dentro da coluna de 900px.
 
+### Linhas da stack
+Uma linha por área (Front-end, Back-end, Banco de dados, Infra e versionamento, Design e organização), dados em `src/data/stack.ts`. À esquerda, o nome da área (Jost 500 16px, 0.28em) e uma frase em linguagem simples para quem não é da área; à direita, os nomes das tecnologias em Gilda 88px, separados por uma barra em branco a 30% (oculta para leitores de tela). Sem logos, barras de habilidade, níveis ou anos: o nome é o visual e a lista só tem fatos.
+
 ### Navigation
 Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda itálico 15px laranja) sobre "Andrey Oliveira" (Gilda 24px), links Jost 16px e a pílula do WhatsApp. No celular (64px): assinatura e botão de 3 traços que abre uma sobreposição preta em tela cheia (links em Gilda, botão laranja), com `aria-expanded`/`aria-controls`, foco preso, Esc fecha e o foco volta ao botão.
 
 ### Motion
 - Hero, uma vez por visita (`sessionStorage` + `html[data-visto]`): letras do nome sobem uma a uma (60ms de intervalo, 900ms, expo.out), a caligrafia se escreve com `clip-path`, o apoio e o botão sobem, o círculo aparece por último (~1,5s).
-- Entregas: cada linha sobe 24px ao entrar na tela; Sobre: o retrato se revela de baixo para cima. Ambos com `animation-timeline: view()`; sem suporte, aparecem prontos.
+- Entregas e Stack: cada linha sobe 24px ao entrar na tela; Sobre: o retrato se revela de baixo para cima. Todos com `animation-timeline: view()`; sem suporte, aparecem prontos.
 - `prefers-reduced-motion`: tudo pronto e parado.
 
 ## Do's and Don'ts

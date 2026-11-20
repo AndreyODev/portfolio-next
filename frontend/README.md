@@ -34,10 +34,10 @@ frontend/
     │   └── globals.css  # Tailwind + variáveis de tema
     ├── components/
     │   ├── layout/      # peças fixas da página: Header, Footer
-    │   ├── sections/    # blocos da home: Hero, About, Projects, Contact
+    │   ├── sections/    # blocos da home: Hero, Deliveries, About, Stack, Contact
     │   └── ui/          # peças reutilizáveis e genéricas: Container, Section
     ├── config/site.ts   # nome, descrição, menu e redes (fonte única)
-    ├── data/            # conteúdo local (projetos) enquanto não há backend
+    ├── data/            # conteúdo local (projetos, sobre, stack, textos da home) enquanto não há backend
     ├── lib/             # funções utilitárias sem React (cn)
     ├── services/api.ts  # único ponto de contato com o backend
     └── types/           # tipos compartilhados (Project)

@@ -1,6 +1,6 @@
 /*
  * Contato. Referência: pesquisa/handoff-home/referencia-html/04-contato.html (faixa de 1060px).
- * Faixa inteira laranja; a elipse preto-2 do Sobre desce sobre ela. Texto em preto.
+ * Faixa inteira laranja; a elipse preta da Stack (faixa anterior) desce sobre ela. Texto em preto.
  */
 
 .contato {
@@ -10,7 +10,7 @@
   color: var(--color-preto);
 }
 
-/* Borda superior curva: a elipse da faixa anterior (preto-2) desce sobre o laranja. */
+/* Borda superior curva: a elipse da faixa anterior (Stack, preto) desce sobre o laranja. */
 .contato::before {
   content: "";
   position: absolute;
@@ -19,7 +19,7 @@
   top: -360px;
   height: 400px;
   border-radius: 50%;
-  background: var(--color-preto-2);
+  background: var(--color-preto);
 }
 
 .quadro {

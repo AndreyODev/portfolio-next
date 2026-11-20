@@ -1,0 +1,196 @@
+/*
+ * Stack. Sem maquete no handoff: composição própria na mesma linguagem (rótulo com fios, título em
+ * Gilda, caligrafia Allura, linhas entre fios). Fundo preto entre o Sobre (preto-2) e o Contato.
+ * Celular primeiro; a partir de 1024px, medidas do quadro de 1920 em --f.
+ */
+
+.stack {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-preto);
+}
+
+.quadro {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 96px var(--gutter) 96px;
+}
+
+.arco {
+  display: none;
+}
+
+.cab {
+  position: relative;
+}
+
+.rotulo {
+  --rotulo-tam: 13px;
+}
+
+.titulo {
+  margin-top: 22px;
+  font: 400 14cqw / 0.86 var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.caligrafia {
+  display: block;
+  margin: -1cqw 0 0 20cqw;
+  font: 400 14cqw / 1 var(--font-allura), cursive;
+  letter-spacing: normal;
+  white-space: nowrap;
+  color: var(--color-laranja);
+  rotate: -4deg;
+}
+
+.intro {
+  max-width: 34ch;
+  margin-top: 40px;
+  font: 300 18px / 1.6 var(--font-sans);
+  color: var(--color-apoio);
+}
+
+.areas {
+  margin-top: 56px;
+  border-top: 1px solid var(--color-fio);
+  list-style: none;
+}
+
+.area {
+  display: grid;
+  gap: 18px;
+  padding: 28px 0 32px;
+  border-bottom: 1px solid var(--color-fio);
+}
+
+.areaNome {
+  font: 500 14px / 1.2 var(--font-sans);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.areaTexto {
+  margin-top: 10px;
+  font: 300 16px / 1.5 var(--font-sans);
+  color: var(--color-apoio);
+}
+
+/* Nomes em Gilda; a barra separa um do outro e fica presa ao nome anterior (não começa linha). */
+.nomes {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 6px;
+  list-style: none;
+  /* 10cqw: "Express / FastAPI" (7,65em) ainda cabe numa linha entre as margens de 8,33vw. */
+  font: 400 10cqw / 1.05 var(--font-display);
+}
+
+.nomes li {
+  white-space: nowrap;
+}
+
+.nomes li:not(:last-child)::after {
+  content: "/" / "";
+  margin: 0 0.28em;
+  color: rgb(244 244 241 / 0.3);
+}
+
+/* Entrada: cada linha sobe 24px ao entrar na tela, como nas Entregas (sem suporte, já aparece pronta). */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .area {
+      animation: entra linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes entra {
+  from {
+    translate: 0 24px;
+    opacity: 0;
+  }
+}
+
+/* ── Desktop: quadro de 1920 ────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .quadro {
+    padding: calc(150 * var(--f)) var(--gutter) calc(170 * var(--f));
+  }
+
+  .arco {
+    display: block;
+    left: calc(1340 * var(--f));
+    top: calc(360 * var(--f));
+    width: calc(1100 * var(--f));
+    height: calc(1100 * var(--f));
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .cab {
+    min-height: calc(400 * var(--f));
+  }
+
+  .rotulo {
+    --rotulo-tam: max(12px, calc(17 * var(--f)));
+  }
+
+  .titulo {
+    margin-top: calc(34 * var(--f));
+    font-size: calc(150 * var(--f));
+  }
+
+  .caligrafia {
+    position: absolute;
+    left: calc(500 * var(--f));
+    top: calc(150 * var(--f));
+    margin: 0;
+    font-size: calc(128 * var(--f));
+  }
+
+  .intro {
+    position: absolute;
+    left: calc(1160 * var(--f));
+    top: calc(118 * var(--f));
+    width: calc(440 * var(--f));
+    max-width: none;
+    margin-top: 0;
+    font-size: max(17px, calc(24 * var(--f)));
+  }
+
+  .areas {
+    margin-top: 0;
+  }
+
+  .area {
+    /* Coluna dos nomes com 1140px: "React / Next.js / TypeScript /" cabe numa linha só. */
+    grid-template-columns: calc(460 * var(--f)) 1fr;
+    gap: 0;
+    padding: calc(44 * var(--f)) 0 calc(50 * var(--f));
+  }
+
+  /* Alinha o rótulo da área com o topo das maiúsculas dos nomes. */
+  .sobreArea {
+    padding-top: calc(20 * var(--f));
+    padding-right: calc(56 * var(--f));
+  }
+
+  .areaNome {
+    font-size: max(13px, calc(16 * var(--f)));
+  }
+
+  .areaTexto {
+    max-width: calc(380 * var(--f));
+    margin-top: calc(16 * var(--f));
+    font-size: max(15px, calc(19 * var(--f)));
+  }
+
+  .nomes {
+    row-gap: calc(10 * var(--f));
+    font-size: calc(88 * var(--f));
+    line-height: 1;
+  }
+}

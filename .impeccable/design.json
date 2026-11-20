@@ -155,7 +155,7 @@
       {
         "name": "entra-na-tela",
         "value": "animation-timeline: view(), 24px",
-        "purpose": "Linhas das Entregas e retrato do Sobre; sem suporte, aparecem prontos."
+        "purpose": "Linhas das Entregas e da Stack e retrato do Sobre; sem suporte, aparecem prontos."
       }
     ],
     "breakpoints": [

@@ -155,7 +155,12 @@
       {
         "name": "entra-na-tela",
         "value": "animation-timeline: view(), 24px",
-        "purpose": "Linhas das Entregas e da Stack e retrato do Sobre; sem suporte, aparecem prontos."
+        "purpose": "Linhas das Entregas, da Stack e dos Projetos e retrato do Sobre; sem suporte, aparecem prontos. A seção precisa de overflow: clip (com hidden a animação fica parada)."
+      },
+      {
+        "name": "linha-da-serie",
+        "value": "animation-timeline: --linha-serie (view-timeline da lista), entry 20% → cover 45%",
+        "purpose": "Nos Projetos, a linha laranja de cada série se desenha da primeira versão para a última enquanto a página rola."
       }
     ],
     "breakpoints": [

@@ -58,3 +58,16 @@ A home foi implementada a partir de `pesquisa/handoff-home/`. Em 1920 cada seç�
 - **Hover da 1ª linha:** a referência mostra a moldura laranja fixa; na página ela aparece com o mouse ou o foco.
 - **Mínimos de leitura:** abaixo de 1920 as medidas escalam junto, mas texto e botões têm piso (ex.: apoio do hero ≥ 12px, texto ≥ 17px), o que muda quebras de linha só em telas pequenas (1024px).
 - **Allura** só é carregada na home (`src/lib/fonts.ts`), para a 404 não pré-carregar uma fonte que não usa.
+
+## Projetos: "Código em evolução" (2026-11-20)
+
+Pedido do Andrey: mostrar os repositórios do GitHub que não estão no ar (faculdade, estudos, projetos pessoais) sem parecer trabalho inferior e sem mexer nas Entregas. Proposta aprovada com a maquete `pesquisa/redesign/maquetes/05-projetos.html`.
+
+- **Ideia:** as Entregas provam com a tela ("Sites no ar"); os Projetos provam com o código ("Código em evolução"). Mesmo peso, prova diferente. O título repete o gesto das outras seções (rótulo com fios, Gilda e caligrafia).
+- **Curadoria em três níveis:** séries (o mesmo projeto refeito, com a linha laranja ligando as versões), seleção (sumário com fio-guia, 6 abertos e o resto em "Ver mais") e cadernos de estudo (só os nomes). O resto do GitHub fica no link "Todos os repositórios".
+- **Sem datas:** 14 repositórios foram criados entre 3 e 5 de setembro de 2026, enviados de uma vez; a data de criação não diz quando o projeto foi feito. A evolução aparece nas séries, não numa linha do tempo.
+- **Só fatos:** cada texto saiu do README ou da árvore de arquivos do repositório. O README do `cine-movie` mostra selos de build, cobertura de 89% e CI/CD que o repositório não tem (sem testes nem workflows); essas afirmações não entram. Repositórios sem README ficam de fora até o Andrey descrever.
+- **Posição:** entre a Stack e o Contato, no preto-2. O fundo alterna sem mexer nas outras faixas (a elipse do Contato passou de preto para preto-2) e "Código em evolução" leva a "Próxima fase: o seu site."
+- **DropaAI** saiu das Entregas (não está publicado; o README diz "estrutura inicial") e entrou na seleção dos Projetos com o status "Em construção". As Entregas ficaram só com sites no ar; a faixa tipográfica continua no código.
+- **Implementação:** a caligrafia se posiciona pelo título (`position: relative` no `h2`), como na maquete. Nome longo na seleção quebra e o fio-guia some (`minmax(0, 1fr)`), para não sobrar um tracinho.
+- **`overflow: clip` na seção:** com `overflow: hidden`, a seção vira contêiner de rolagem e as animações `view()` medem a seção, que não rola, e ficam paradas. Conferido no Chromium: com `hidden` a linha do tempo fica fixa (ex.: 72,99%) em qualquer rolagem; com `clip` ela acompanha a página. Entregas, Sobre e Stack usavam `hidden` e as entradas delas nunca tocaram; passaram para `clip` no mesmo dia. As capturas com movimento reduzido ficaram idênticas pixel a pixel (1920, 1440 e 390) e, com movimento, as linhas sobem e o retrato se revela conforme a rolagem.

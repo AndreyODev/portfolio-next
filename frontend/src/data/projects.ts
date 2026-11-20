@@ -1,7 +1,9 @@
 import type { Project } from "@/types/project";
 
 /**
- * Entregas exibidas na home. Para adicionar um projeto, copie um bloco e ajuste.
+ * Entregas exibidas na home: projetos concluídos e publicados. Repositórios que não estão no ar
+ * (estudos, faculdade, projetos em construção) vão para `repositorios.ts`, na seção Projetos.
+ * Para adicionar uma entrega, copie um bloco e ajuste.
  * O site ordena pela data (mais recente primeiro); empate mantém a ordem do arquivo.
  * Com `image`, o projeto vira uma linha com a tela; sem, uma faixa tipográfica.
  *
@@ -38,16 +40,6 @@ export const projects: Project[] = [
       src: "/images/entregas/tela-sushi-vaz.webp",
       alt: "Tela inicial do site do Sushi Vaz: título Deixe com o chef e uma peça de sushi.",
     },
-  },
-  {
-    slug: "dropaai",
-    title: "DropaAI",
-    kind: "Plataforma web",
-    summary: "Plataforma para a comunidade de Free Fire: recrutamento, equipes e conexão entre jogadores.",
-    date: "2026-11",
-    status: "em-construcao",
-    stack: ["HTML", "CSS", "JavaScript", "Express", "PostgreSQL"],
-    repoUrl: "https://github.com/AndreyODev/dropaai",
   },
 ];
 

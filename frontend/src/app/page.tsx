@@ -2,6 +2,7 @@ import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { Deliveries } from "@/components/sections/Deliveries";
 import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
 import { Stack } from "@/components/sections/Stack";
 import { allura } from "@/lib/fonts";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Deliveries />
       <About />
       <Stack />
+      <Projects />
       <Contact />
     </div>
   );

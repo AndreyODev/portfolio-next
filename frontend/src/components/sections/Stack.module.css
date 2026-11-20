@@ -6,7 +6,8 @@
 
 .stack {
   position: relative;
-  overflow: hidden;
+  /* clip, não hidden: hidden cria contêiner de rolagem e a animação com view() fica parada. */
+  overflow: clip;
   background: var(--color-preto);
 }
 

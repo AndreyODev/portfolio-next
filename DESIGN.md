@@ -93,7 +93,7 @@ Medidas em px referem-se ao quadro de 1920 px da referência (`pesquisa/handoff-
 
 O nome do Andrey em escala de letreiro, sangrando nas duas bordas da tela, com a cabeça dele (recortada da própria foto de trabalho) cobrindo a base do "O", o mesmo gesto da abertura ALGODÃO da pousada-algodao. O chão é preto, o texto é um branco quente e existe uma única cor, o laranja, que aparece na caligrafia, num destaque por bloco, no botão principal, nos fios e nos arcos.
 
-A densidade é baixa e editorial: cada seção tem um rótulo com fios, um título enorme em Gilda Display e uma palavra manuscrita em Allura por cima. As provas são reais (telas dos sites publicados, em cor natural). O preto não fica sozinho: a faixa de Contato é inteira laranja, o contrapeso que tira o "ar de luto".
+A densidade é baixa e editorial: cada seção tem um rótulo com fios, um título enorme em Gilda Display e uma palavra manuscrita em Allura por cima. As provas são reais: nas Entregas, a tela dos sites publicados, em cor natural; nos Projetos, o código dos repositórios do GitHub. O preto não fica sozinho: a faixa de Contato é inteira laranja, o contrapeso que tira o "ar de luto".
 
 Recusados com o Andrey: vinho/bordô, carvão quente, marinho, papel claro, tijolo, verde-garrafa; fotos em P&B (sensação de luto); Big Shoulders, Bricolage e Bodoni; o design anterior "Seleção de Personagem" (amarelo/azul).
 
@@ -112,8 +112,8 @@ Preto como chão, branco quente para ler e o laranja como única voz.
 - **Laranja** (#ff7a1a): caligrafias, destaque de uma expressão por bloco ("Região dos Lagos"), botão principal, rótulos e seus fios, arcos (1.5px a 42–45%), ponto de status "no ar", foco do teclado. Sobre o preto: 7,5:1.
 
 ### Neutral
-- **Preto** (#0c0c0c): chão do hero, das Entregas e da Stack, e a elipse que desce sobre o Contato.
-- **Preto 2** (#161616): faixas vizinhas (Sobre e rodapé).
+- **Preto** (#0c0c0c): chão do hero, das Entregas e da Stack.
+- **Preto 2** (#161616): faixas vizinhas (Sobre, Projetos e rodapé) e a elipse que desce sobre o Contato.
 - **Branco** (#f4f4f1): nome, títulos e texto principal.
 - **Apoio** (branco a 72%): texto secundário (resumos, bio, meta). 9,3:1 sobre o preto, 8,9:1 sobre o preto 2.
 - **Fio** (branco a 18%): bordas das telas, linhas das faixas e da grade de etapas.
@@ -134,9 +134,9 @@ Preto como chão, branco quente para ler e o laranja como única voz.
 
 ### Hierarchy
 - **Display** (400, `372px` no quadro = 19.4vw, line-height 0.8, -0.012em): só o DREYODEV do hero (74px no celular de 390).
-- **Headline** (400, 230 / 210 / 150px, line-height 0.86, -0.01em): "Sites", "Próxima fase:", "Quem é o". No celular, 18–22cqw.
-- **Title** (400, 104px / 0.9): nome do projeto. Faixa sem tela: 150px vazado (`-webkit-text-stroke: 1.5px` branco a 55%).
-- **Script** (Allura, 196 / 168 / 150 / 128px, -4°): "full stack", "o seu site.", "no ar", "DreyODev".
+- **Headline** (400, 230 / 210 / 150px, line-height 0.86, -0.01em): "Sites", "Código", "Próxima fase:", "Quem é o". No celular, 18–22cqw.
+- **Title** (400, 104px / 0.9): nome do projeto e nome da série (Projetos). Faixa sem tela: 150px vazado (`-webkit-text-stroke: 1.5px` branco a 55%). Na seleção dos Projetos, 72px; nome da versão, 52px.
+- **Script** (Allura, 196 / 168 / 150 / 128px, -4°): "full stack", "o seu site.", "no ar", "em evolução", "DreyODev".
 - **Body** (Jost 300, 24px / 1.6, apoio): intros, resumos, bio. Etapas em 19px / 1.5.
 - **Label** (Jost 400, 15–17px, 0.28–0.62em, caixa alta): rótulos com fios, meta "LANDING PAGE · NOV 2026", links com seta. O apoio do hero é Jost 400 21px / 1.62, 0.3em.
 
@@ -153,6 +153,7 @@ Preto como chão, branco quente para ler e o laranja como única voz.
 - **Entregas:** cabeçalho de 470px; linhas de 600px com tela 960×600 e texto de 560px a 100px dela, alternando lados pela ordem; 80px entre linhas; a faixa tipográfica tem coluna de nome de 900px.
 - **Sobre:** retrato em arco 640×900 + coluna de 800px a 160px dele; etapas em grade 2×2.
 - **Stack** (sem maquete; composição própria em 2026-11-20): cabeçalho de 400px (título Gilda 150px, caligrafia 128px, intro de 440px a 1160px da margem); uma linha por área entre fios, com coluna de 460px para a área (rótulo + frase) e os nomes em Gilda 88px na coluna restante. Celular: título 14cqw, nomes 10cqw.
+- **Projetos** (maquete em `pesquisa/redesign/maquetes/05-projetos.html`, aprovada em 2026-11-20): fundo preto-2 entre a Stack e o Contato. Cabeçalho de 470px como o das Entregas ("Código" 230px, "em evolução" 150px a 440/168px do título, intro de 540px a 1060px). Série: nome (coluna de 900px) e resumo à direita; versões em colunas iguais com 80px entre elas (até 4 por linha), a linha laranja 52px acima. Seleção: número (120px) | nome — fio-guia — tipo (coluna de 520px), e embaixo resumo (até 760px) | tecnologias e links. Cadernos: 460px | nomes | "Todos os repositórios". Celular: a linha da série fica vertical à esquerda e o fio-guia some.
 - **Contato:** faixa de 1060px; chamada e botão à esquerda (620px), canais à direita (580px).
 - **Celular:** tudo empilha; tela em largura total antes do texto; etapas em 1 coluna; rodapé em 2 linhas. Nenhuma página tem rolagem horizontal (`body { overflow-x: clip }`).
 
@@ -193,12 +194,22 @@ Fios em cima e embaixo, nome em Gilda 150px vazado (o "p" atravessa o fio), meta
 ### Linhas da stack
 Uma linha por área (Front-end, Back-end, Banco de dados, Infra e versionamento, Design e organização), dados em `src/data/stack.ts`. À esquerda, o nome da área (Jost 500 16px, 0.28em) e uma frase em linguagem simples para quem não é da área; à direita, os nomes das tecnologias em Gilda 88px, separados por uma barra em branco a 30% (oculta para leitores de tela). Sem logos, barras de habilidade, níveis ou anos: o nome é o visual e a lista só tem fatos.
 
+### Série (Projetos)
+O mesmo projeto refeito em versões, dados em `src/data/repositorios.ts`. Meta "SÉRIE · 3 VERSÕES", nome em Gilda 104px e resumo; as versões ficam ligadas por uma linha laranja de 1.5px com um ponto de 13px em cada versão. A última versão ganha um anel (é onde a série está hoje) e a linha continua depois dela, esmaecendo até a borda: a série segue. Cada versão: número laranja, nome em Gilda 52px, o que mudou, tecnologias e "Ver o código".
+
+### Linha da seleção (Projetos)
+Sumário editorial: número em Jost, nome em Gilda 72px, um fio-guia até o tipo do projeto (como num índice de revista), resumo, tecnologias em caixa alta separadas por barra, status "EM CONSTRUÇÃO" quando for o caso e os links ("Ver a demonstração" só se existir `demoUrl`). Hover/foco: o fio-guia e o número ficam laranja. Nome longo quebra e o fio-guia some. Os projetos além de `selecaoVisiveis` ficam num `<details>` "Ver mais N projetos" (círculo com + que vira ×).
+
+### Cadernos de estudo
+Índice curto dos repositórios de exercícios e anotações (links em caixa alta com o fio embaixo) e o link "Todos os repositórios". O resto do GitHub não aparece no site.
+
 ### Navigation
-Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda itálico 15px laranja) sobre "Andrey Oliveira" (Gilda 24px), links Jost 16px e a pílula do WhatsApp. No celular (64px): assinatura e botão de 3 traços que abre uma sobreposição preta em tela cheia (links em Gilda, botão laranja), com `aria-expanded`/`aria-controls`, foco preso, Esc fecha e o foco volta ao botão.
+Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda itálico 15px laranja) sobre "Andrey Oliveira" (Gilda 24px), links Jost 16px (Entregas, Sobre, Stack, Projetos, Contato) e a pílula do WhatsApp. No celular (64px): assinatura e botão de 3 traços que abre uma sobreposição preta em tela cheia (links em Gilda, botão laranja), com `aria-expanded`/`aria-controls`, foco preso, Esc fecha e o foco volta ao botão.
 
 ### Motion
 - Hero, uma vez por visita (`sessionStorage` + `html[data-visto]`): letras do nome sobem uma a uma (60ms de intervalo, 900ms, expo.out), a caligrafia se escreve com `clip-path`, o apoio e o botão sobem, o círculo aparece por último (~1,5s).
-- Entregas e Stack: cada linha sobe 24px ao entrar na tela; Sobre: o retrato se revela de baixo para cima. Todos com `animation-timeline: view()`; sem suporte, aparecem prontos.
+- Entregas, Stack e Projetos: cada linha sobe 24px ao entrar na tela; Sobre: o retrato se revela de baixo para cima. Nos Projetos, a linha de cada série se desenha da primeira versão para a última enquanto a página rola (linha do tempo nomeada `--linha-serie`, da lista). Todos com `animation-timeline: view()`; sem suporte, aparecem prontos.
+- A seção com essas animações usa `overflow: clip`, não `hidden`: `hidden` cria um contêiner de rolagem, a `view()` passa a medir a seção (que não rola) e a animação fica parada. Entregas, Sobre e Stack ainda usam `hidden` (ver LINGUAGEM.md).
 - `prefers-reduced-motion`: tudo pronto e parado.
 
 ## Do's and Don'ts
@@ -207,6 +218,7 @@ Cabeçalho transparente sobre o hero (84px): assinatura "dev full stack" (Gilda 
 - **Do** manter o laranja #ff7a1a como a única cor e o secundário como branco com opacidade.
 - **Do** usar fotos e telas em cor natural, cada raster com o `.webp.json` de procedência ao lado.
 - **Do** tirar todo texto de `src/config/site.ts` e `src/data/` (inclusive `src/data/home.ts`).
+- **Do** separar as provas: projeto publicado com tela vai para as Entregas (`projects.ts`); repositório que não está no ar vai para os Projetos (`repositorios.ts`), com texto tirado do README e sem datas do GitHub.
 - **Do** manter as duas camadas da foto do hero com as mesmas medidas e o mesmo `sizes`.
 - **Do** conferir mudanças visuais com `pesquisa/handoff-home/verificacao/captura.mjs` contra `referencia-visual/`.
 

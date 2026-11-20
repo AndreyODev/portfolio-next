@@ -18,6 +18,7 @@ export const siteConfig = {
     { label: "Entregas", href: "#entregas" },
     { label: "Sobre", href: "#sobre" },
     { label: "Stack", href: "#stack" },
+    { label: "Projetos", href: "#projetos" },
     { label: "Contato", href: "#contato" },
   ],
   location: "Saquarema, RJ",
